@@ -1,0 +1,18 @@
+.home:hover{
+    border-bottom: 1px solid orange;
+}
+.about:hover{
+    border-bottom: 1px solid orange;
+}
+.service:hover{
+    border-bottom: 1px solid orange;
+}
+.contact:hover{
+    border-bottom: 1px solid orange;
+}
+.terms:hover{
+    border-bottom: 1px solid orange;
+}
+.login:hover{
+    border-bottom: 1px solid orange;
+}
