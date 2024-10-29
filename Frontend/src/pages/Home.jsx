@@ -1,5 +1,5 @@
 import {React,useState} from 'react'
-import { Container, Row, Col, Button, Carousel,Image} from 'react-bootstrap';
+import { Container, Row, Col, Button,Image} from 'react-bootstrap';
 import food from '../assets/food.png'
 import Footer from '../components/Footer';
 import Cake from '../assets/cake.jpeg';
@@ -13,6 +13,8 @@ import Shawrma from '../assets/Shawarma.jpg';
 import sweet from '../assets/sweet.jpg';
 import vegbiryani from '../assets/veg biryani.jpg';
 import { Typewriter } from 'react-simple-typewriter';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 const Home = () => {
   const foodData = [
     { title:"Chicken Pizza",image:pizza},
@@ -27,13 +29,11 @@ const Home = () => {
     { title:"Veg Biryani",image:vegbiryani},
     { title:"Sandwich",image:sandwich},
   ];
-
-  const[selectdCategory,setSelectedCategory]=useState(foodData[0]);
+  const[selectedCategory,setSelectedCategory]=useState(foodData[0]);
 
   const handleCategoryClick=(food)=>{
     setSelectedCategory(food);
   };
-
   return (
     <>
       <Container fluid style={{ maxWidth: "100vw", maxHeight: "100vh" }}>
@@ -62,7 +62,7 @@ const Home = () => {
         {/* =================================== Food categories ============================================= */}
         <Row className='my-2'>
         <h2 className="text-center my-4" style={{fontFamily:"intial",fontWeight:"bold"}}>Food Categories</h2>
-        <Row className='m-5'>
+        <Row className='m-5 d-flex'>
           {foodData.map((food,index)=>{
             return(
               <Col xs={12} md={4} lg={1} key={index}>
@@ -77,7 +77,7 @@ const Home = () => {
               </Col>
             )
           })}
-        </Row>
+        </Row>   
        </Row>
       <Footer/>
       </Container>
