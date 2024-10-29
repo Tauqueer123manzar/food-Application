@@ -8,9 +8,9 @@ import { FaLinkedin } from "react-icons/fa";
 const Footer = () => {
     return (
         <>
-            <Container fluid className='bg-body-tertiary shadow'>
+            <Container fluid className='' style={{width:"100%",height:"100%"}}>
                 <h1 className='m-2' style={{ fontWeight: "700", fontFamily: "initial", fontSize: "40px", color: "orange" }}>Foody Hunt</h1>
-                <Row className='m-2'>
+                <Row className='p-2'>
                     <Col xs={12} md={4} lg={3}>
                         <p style={{ fontWeight: "400", fontFamily: "initial", fontSize: "25px" }}>About Foody</p>
                         <li style={{ listStyle: "none", padding: "5px" }}>

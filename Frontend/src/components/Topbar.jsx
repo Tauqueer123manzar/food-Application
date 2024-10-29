@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button';
 const Topbar = () => {
   return (
    <>
-     <Navbar expand="lg" className="bg-body-tertiary shadow">
+     <Navbar expand="lg" className="bg-body-tertiary shadow fixed-top">
       <Container fluid>
         <Navbar.Brand href="/" style={{fontSize:"25px",fontWeight:"bold",padding:"10px",color:"orange"}}>Foody Hunt</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
