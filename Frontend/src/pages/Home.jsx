@@ -15,18 +15,25 @@ import vegbiryani from '../assets/veg biryani.jpg';
 import { Typewriter } from 'react-simple-typewriter';
 const Home = () => {
   const foodData = [
-    { title:"Chicken Pizza",image:food},
-    { title:"Chicken Biryani",image:food},
-    { title:"Cake",image:food},
+    { title:"Chicken Pizza",image:pizza},
+    { title:"Chicken Biryani",image:chicken_biryani},
+    { title:"Cake",image:Cake},
     { title:"Burger",image:food},
-    { title:"Mutton Biryani",image:food},
-    { title:"Shawarma",image:food},
-    { title:"Sweet",image:food},
-    { title:"Samosa",image:food},
-    { title:"Chole Bhature",image:food},
-    { title:"Veg Biryani",image:food},
-    { title:"Sandwich",image:food},
+    { title:"Mutton Biryani",image:Mutton},
+    { title:"Shawarma",image:Shawrma},
+    { title:"Sweet",image:sweet},
+    { title:"Samosa",image:samosa},
+    { title:"Chole Bhature",image:chole},
+    { title:"Veg Biryani",image:vegbiryani},
+    { title:"Sandwich",image:sandwich},
   ];
+
+  const[selectdCategory,setSelectedCategory]=useState(foodData[0]);
+
+  const handleCategoryClick=(food)=>{
+    setSelectedCategory(food);
+  };
+
   return (
     <>
       <Container fluid style={{ maxWidth: "100vw", maxHeight: "100vh" }}>
@@ -55,7 +62,22 @@ const Home = () => {
         {/* =================================== Food categories ============================================= */}
         <Row className='my-2'>
         <h2 className="text-center my-4" style={{fontFamily:"intial",fontWeight:"bold"}}>Food Categories</h2>
-        
+        <Row className='m-5'>
+          {foodData.map((food,index)=>{
+            return(
+              <Col xs={12} md={4} lg={1} key={index}>
+                <Image 
+                  src={food.image}
+                  alt={food.title}
+                  onClick={()=> handleCategoryClick(food)}
+                  roundedCircle
+                  style={{ width: '100px', height: '100px', cursor: 'pointer' }}
+                  />
+                  <p className="text-center">{food.title}</p>
+              </Col>
+            )
+          })}
+        </Row>
        </Row>
       <Footer/>
       </Container>
