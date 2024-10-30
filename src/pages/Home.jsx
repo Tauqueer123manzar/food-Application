@@ -73,7 +73,7 @@ const Home = () => {
 
         {/* =================================== Food categories ============================================= */}
         <Row className='my-2'>
-        <h2 className="text-center my-4" style={{fontFamily:"intial",fontWeight:"bold"}}>Food Categories</h2>
+        <h2 className="text-center my-4" style={{fontFamily:"italic",fontWeight:"bold"}}>Explore our food menu</h2>
         <Carousel responsive={responsive}>
           {foodData.map((food,index)=>(
               <Col xs={12} md={4} lg={12} key={index} className='d-flex flex-column align-items-center'>
