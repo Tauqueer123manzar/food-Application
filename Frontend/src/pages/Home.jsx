@@ -25,10 +25,22 @@ const Home = () => {
     { title:"Shawarma",image:Shawrma},
     { title:"Sweet",image:sweet},
     { title:"Samosa",image:samosa},
-    { title:"Chole Bhature",image:chole},
+    { title:"Chole",image:chole},
+    { title:"VegBiryani",image:vegbiryani},
+    { title:"Sandwich",image:sandwich},
+    { title:"Chole",image:chole},
+    { title:"Veg Biryani",image:vegbiryani},
+    { title:"Sandwich",image:sandwich},
+    { title:"Chole",image:chole},
     { title:"Veg Biryani",image:vegbiryani},
     { title:"Sandwich",image:sandwich},
   ];
+  const responsive = {
+    superLargeDesktop:{breakpoint:{max:4000,min:1024},items:12},
+    desktop:{breakpoint:{max:1024,min:768},items:8},
+    tablet:{breakpoint:{max:768,min:464},items:5},
+    mobile: { breakpoint: { max: 464, min: 0 }, items: 3},
+  };
   const[selectedCategory,setSelectedCategory]=useState(foodData[0]);
 
   const handleCategoryClick=(food)=>{
@@ -62,10 +74,9 @@ const Home = () => {
         {/* =================================== Food categories ============================================= */}
         <Row className='my-2'>
         <h2 className="text-center my-4" style={{fontFamily:"intial",fontWeight:"bold"}}>Food Categories</h2>
-        <Row className='m-5 d-flex'>
-          {foodData.map((food,index)=>{
-            return(
-              <Col xs={12} md={4} lg={1} key={index}>
+        <Carousel responsive={responsive}>
+          {foodData.map((food,index)=>(
+              <Col xs={12} md={4} lg={12} key={index} className='d-flex flex-column align-items-center'>
                 <Image 
                   src={food.image}
                   alt={food.title}
@@ -76,9 +87,9 @@ const Home = () => {
                   <p className="text-center">{food.title}</p>
               </Col>
             )
-          })}
-        </Row>   
-       </Row>
+          )}
+          </Carousel> 
+        </Row>  
       <Footer/>
       </Container>
     </>
