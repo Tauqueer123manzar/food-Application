@@ -6,7 +6,11 @@ import Topbar from './components/Topbar';
 import Service from './pages/Service';
 import Policy from './pages/Policy';
 import Contact from './pages/Contact';
+import Cart from './pages/Cart';
+import PlaceOrder from './pages/PlaceOrder';
 import './App.css'
+import Signin from './pages/Signin';
+import Signup from './pages/Signup';
 function App() {
 
   return (
@@ -19,6 +23,10 @@ function App() {
         <Route path='/service' element={<Service/>}/>
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/polciy' element={<Policy/>}/>
+        <Route path='/cart' element={<Cart/>}/>
+        <Route path='/login' element={<Signin/>}/>
+        <Route path='/signup' element={<Signup/>}/>
+        <Route path='/placeorder' element={<PlaceOrder/>}/>
       </Routes>
     </Router>
     </>
