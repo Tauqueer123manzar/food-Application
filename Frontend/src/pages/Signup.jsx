@@ -49,7 +49,7 @@ const Signup = () => {
                 </Form>
             </Col>
         </Row>
-        <hr style={{border:"2px dashed orange", margin:"20px",padding:"0"}}/>
+        <hr style={{border:"2px dashed orange", margin:"0",padding:"0"}}/>
         <Row>
             <Footer/>
         </Row>
