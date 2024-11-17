@@ -20,7 +20,6 @@ const Topbar = () => {
             <Nav.Link href='/About' className='p-2 about text-dark'>About</Nav.Link>
             <Nav.Link href='/service' className='p-2 service text-dark'>Services</Nav.Link>
             <Nav.Link href='/contact' className='p-2 contact text-dark'>Contact</Nav.Link>
-            <Nav.Link href='/policy' className='p-2 terms text-dark'>Terms & Policy</Nav.Link>
           </Nav>
            <Nav.Link href='/login' className='p-2 text-muted fs-5' style={{textAlign:"center"}}>Login</Nav.Link>
            <Nav.Link href='/cart' className='p-2 text-muted fs-5' style={{textAlign:"center"}}>Cart</Nav.Link>

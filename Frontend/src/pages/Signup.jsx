@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 const Signup = () => {
   return (
    <>
-    <Container fluid>
+    <Container fluid style={{width:"100%",height:"100%"}}>
     <Row className='mt-5'>
             <h3 className='mt-5 text-center text-muted'>Welcome!</h3>
             <p className='text-center'>Start your journey with us by signing up. It only takes a few minutes!</p>
@@ -49,7 +49,7 @@ const Signup = () => {
                 </Form>
             </Col>
         </Row>
-        <hr style={{border:"2px dashed orange", margin:"0",padding:"0"}}/>
+        <hr style={{border:"2px dashed orange", margin:"0",padding:"0",marginTop:"10px"}}/>
         <Row>
             <Footer/>
         </Row>

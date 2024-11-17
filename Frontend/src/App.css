@@ -17,3 +17,45 @@
     border: 3px solid greenyellow;
     border-radius: 50px;
 }
+
+.custom-card{
+    width: 100%;
+    max-width: 28rem;
+    margin-top: 25px;
+}
+
+.card-container-1{
+    height: 220px;
+    padding: 1rem;
+}
+
+.services {
+    transform: translateX(0px) translateY(0px);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.services:hover {
+    transform: translateY(-10px) scale(1.05);
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+@media (min-width:240px) and (max-width:768px) {
+    .custom-card .card-container-1{
+        width: 18rem;
+        height: auto;
+        overflow: hidden;
+        margin-bottom: 10px;
+    }
+    .custom-card .card-title{
+        font-size: 1.25rem;
+    }
+    .custom-card .card-text{
+        font-size: 1rem;
+    }
+    .custom-card .card-link{
+        font-size: 0.9rem;
+    }
+}

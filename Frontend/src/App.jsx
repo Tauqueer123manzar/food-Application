@@ -8,9 +8,10 @@ import Policy from './pages/Policy';
 import Contact from './pages/Contact';
 import Cart from './pages/Cart';
 import PlaceOrder from './pages/PlaceOrder';
-import './App.css'
 import Signin from './pages/Signin';
 import Signup from './pages/Signup';
+import Report from './components/Report';
+import './App.css'
 function App() {
 
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path='/cart' element={<Cart/>}/>
         <Route path='/login' element={<Signin/>}/>
         <Route path='/signup' element={<Signup/>}/>
+        <Route path='/report' element={<Report/>}/>
         <Route path='/placeorder' element={<PlaceOrder/>}/>
       </Routes>
     </Router>

@@ -50,7 +50,7 @@ const About = () => {
         </div>
         <Row className="mx-0 my-5">
           <Col xs={12} md={6} lg={5} className="p-4">
-            <h1 className='mt-3 p-4' style={{ fontWeight: "700", fontFamily: "initial", fontSize: "45px" }}>
+            <h1 className='mt-1 p-3' style={{ fontWeight: "700", fontFamily: "initial", fontSize: "45px" }}>
               <Typewriter
                 words={['Welcome to Food Hunt!', 'Crave, Order, Enjoy!', 'Tasty Treats Anytime!']}
                 loop={0}
@@ -61,7 +61,7 @@ const About = () => {
                 delayspeed={2000}
               />
             </h1>
-            <p className="text-muted text-justify mt-4" style={{ fontSize: "16px" }}>
+            <p className="text-muted text-justify mt-1 p-3" style={{ fontSize: "16px" }}>
               At Foody, we believe that food brings people together and creates
               unforgettable experiences. Whether you're craving a quick snack, a
               hearty meal, or exploring diverse cuisines, Foody is here to
@@ -84,11 +84,54 @@ const About = () => {
             />
           </Col>
         </Row>
+        <hr
+          style={{
+            border: "4px dashed orange",
+            margin: 0,
+            padding: 0,
+          }}
+        />
 
+        {/* ========================================== Our Vision ================================================= */}
+        <Row className="justify-content-center text-center">
+          <Col xs={12} md={8}>
+          <h1 className="text-center mt-4" style={{ fontFamily: "Times New Roman", fontWeight: "bold",borderBottom:"4px solid orange"}}>Our Vision</h1>
+            <p className="text-muted p-5" style={{ fontSize: "1rem" }}>
+              At <span style={{ color: "#ff5722", fontWeight: "bold" }}>Foody</span>,
+              our vision is to revolutionize the way people experience food. 
+              We aim to bridge the gap between food enthusiasts and the culinary world 
+              by providing a seamless platform for discovering, ordering, and savoring 
+              delightful meals. We believe in fostering connections between local restaurants
+              and communities. Through innovation and dedication, we strive to make every 
+              meal an unforgettable experience, whether you're dining in, taking out, or 
+              sharing with loved ones.
+            </p>
+          </Col>
+        </Row>
+
+
+        {/* ============================================== Our Mission ================================================== */}
+        <Row className="justify-content-center text-center">
+        <Col xs={12} md={8}>
+          <h2 style={{ fontFamily: "Times New Roman", fontWeight: "bold",borderBottom:"4px solid orange"}}>
+            Our Mission
+          </h2>
+          <p className="mt-3 text-muted" style={{ fontSize: "1rem"}}>
+            At <span style={{ color: "#ff5722", fontWeight: "bold" }}>Foody</span>, 
+            our mission is to bring the joy of delicious food to your fingertips. 
+            We are dedicated to offering a platform that makes exploring cuisines, 
+            ordering meals, and connecting with local restaurants simple and convenient.
+            By leveraging technology and innovation, we aim to create a vibrant 
+            ecosystem where customers and food providers thrive together. We are 
+            committed to ensuring quality, reliability, and an exceptional food 
+            experience for every user, every time.
+          </p>
+        </Col>
+      </Row>
         {/* ======================================= Frequently Asked Questions ======================================== */}
         <Row className="mt-5 justify-content-center">
-          <h2 className="text-center" style={{ fontFamily: "Times New Roman" }}>Frequently Asked Questions</h2>
-          <Col xs={12} md={6} lg={6} className="p-4 mb-2">
+          <h2 className="text-center" style={{ fontFamily: "Times New Roman",fontWeight:"bold"}}>Frequently Asked Questions</h2>
+          <Col xs={12} md={6} lg={8} className="p-4 mb-2">
             <Accordion defaultActiveKey={"0"} >
               <Accordion.Item eventKey="0">
                 <Accordion.Header>
