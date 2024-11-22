@@ -16,7 +16,7 @@ const About = () => {
             backgroundImage: `url(${food})`,
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
-            height: "90vh",
+            height: "70vh",
             width: "100%",
             position: "relative",
           }}
@@ -96,7 +96,7 @@ const About = () => {
         <Row className="justify-content-center text-center">
           <Col xs={12} md={8}>
           <h1 className="text-center mt-4" style={{ fontFamily: "Times New Roman", fontWeight: "bold",borderBottom:"4px solid orange"}}>Our Vision</h1>
-            <p className="text-muted p-5" style={{ fontSize: "1rem" }}>
+            <p className="text-muted p-3" style={{ fontSize: "1rem" }}>
               At <span style={{ color: "#ff5722", fontWeight: "bold" }}>Foody</span>,
               our vision is to revolutionize the way people experience food. 
               We aim to bridge the gap between food enthusiasts and the culinary world 
@@ -116,7 +116,7 @@ const About = () => {
           <h2 style={{ fontFamily: "Times New Roman", fontWeight: "bold",borderBottom:"4px solid orange"}}>
             Our Mission
           </h2>
-          <p className="mt-3 text-muted" style={{ fontSize: "1rem"}}>
+          <p className="mt-3 text-muted p-3" style={{ fontSize: "1rem"}}>
             At <span style={{ color: "#ff5722", fontWeight: "bold" }}>Foody</span>, 
             our mission is to bring the joy of delicious food to your fingertips. 
             We are dedicated to offering a platform that makes exploring cuisines, 

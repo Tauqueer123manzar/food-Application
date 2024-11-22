@@ -2,8 +2,16 @@ import React from 'react'
 import { Container, Row, Col, Button, Card } from 'react-bootstrap'
 import { Typewriter } from 'react-simple-typewriter'
 import Footer from '../components/Footer';
+import { MdStarRate } from "react-icons/md";
 import '../App.css';
 const Service = () => {
+  const reviews = [
+    { id: 1, name: "Md Tauqueer Manzar", title:"Sr.Software Enginer", review: "Amazing service! Loved it Your food was delicious and food quality was very good.I will recommend you to my friends.", stars: 5 },
+    { id: 2, name: "Mehnaz Fatma",title:"Software Enginer",review: "The food was delicious! Your food was delicious and food quality was very good.I will recommend you to my friends.", stars: 4 },
+    { id: 3, name: "Abhisek Kumar",title:"Developer", review: "Quick delivery and great quality Your food was delicious and food quality was very good.I will recommend you to my friends.", stars: 5 },
+    { id: 4, name: "Sweta Kumari",title:"Devops Devloper", review: "Quick delivery and great quality Your food was delicious and food quality was very good.I will recommend you to my friends.", stars: 4.5 }
+  ];
+
   const foodData = [
     {
       id: 1,
@@ -96,7 +104,7 @@ const Service = () => {
       <Container fluid style={{ maxWidth: "100%", maxHeight: "100%" }}>
         <Row className='mt-5'>
           <Col xs={12} md={6} lg={5} className='mt-5'>
-            <h1 className='mt-3 p-3' style={{ fontWeight: "700", fontFamily: "initial", fontSize: "45px", color: "orangered" }}>
+            <h1 className='mt-3 p-3' style={{ fontWeight: "700", fontFamily: "initial", fontSize: "45px", color: "orange" }}>
               <Typewriter
                 words={["Meals Made Easy, Moments Made Special!"]}
                 loop={0}
@@ -139,9 +147,10 @@ const Service = () => {
           </Col>
         ))}
       </Row>
-
-
+      
       <hr style={{border:"2px dashed orange",margin:"0",padding:"0"}}/>
+
+    {/* ================================================= Footer ================================================= */}
       <Row className='mt-4'>
           <Footer/>
       </Row>

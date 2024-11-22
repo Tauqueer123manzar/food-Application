@@ -26,7 +26,7 @@ const Footer = () => {
                             <a href='/contact' style={{ textDecoration: "none", color: "black" }}>Contact</a>
                         </li>
                         <li style={{ listStyle: "none", padding: "5px" }}>
-                            <a href='terms' style={{ textDecoration: "none", color: "black" }}>Terms & Policy</a>
+                            <a href='/policy' style={{ textDecoration: "none", color: "black" }}>Terms & Policy</a>
                         </li>
                     </Col>
 
