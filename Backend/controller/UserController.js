@@ -36,7 +36,7 @@ exports.UserRegister=catchAsyncErrors(async(req,res,next)=>{
 
     res.status(200).json({
         success:true,
-        message:"User created successfully"
+        message:"User Registered successfully"
     });
 });
 
