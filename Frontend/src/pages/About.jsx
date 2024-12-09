@@ -114,7 +114,7 @@ const About = () => {
 
 
         {/* ========================================== Our Vision ================================================= */}
-        <h1 className="text-center mt-4" style={{ fontFamily: "Times New Roman", fontWeight: "bold"}}>Our Vision</h1>
+        <h1 className="text-center mt-4" style={{ fontFamily: "Times New Roman", fontWeight: "bold" }}>Our Vision</h1>
         <Row className="my-4 text-center justify-content-center mx-4">
           {[
             { icon: <FaLeaf size={40} />, title: "Eco-Friendly Practices", text: "Promoting sustainability through eco-friendly packaging and operations." },
@@ -135,16 +135,16 @@ const About = () => {
         </Row>
 
         {/* ============================================== Our Mission ================================================== */}
-        <Row className="justify-content-center text-center mt-5">
-            <h2
-              className="text-center"
-              style={{
-                fontFamily: "Times New Roman",
-                fontWeight: "bold",
-              }}
-            >
-              Our Mission
-            </h2>
+        <Row className="justify-content-center text-center mt-5 mx-4">
+          <h2
+            className="text-center"
+            style={{
+              fontFamily: "Times New Roman",
+              fontWeight: "bold",
+            }}
+          >
+            Our Mission
+          </h2>
 
           {missionData.map((mission) => (
             <Col

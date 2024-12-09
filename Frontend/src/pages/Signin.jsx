@@ -1,9 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container,Row,Col,Button,Form} from 'react-bootstrap';
 import Footer from '../components/Footer';
 import juice from '../assets/fast food.png';
 import { Typewriter } from 'react-simple-typewriter';
+import axios from 'axios';
+import { toast } from 'react-toastify';
 const Signin = () => {
+  const[email,setEmail]=useState("");
+  const[password,setPassword]=useState("");
+
+  const handleSubmit=async(e)=>{
+    e.preventDefault();
+    console.log("Form submitted",email,password);
+    try {
+      await axios.post("http://localhost:5000/api/v1/user/login",{
+        email,
+        password,
+        role:"User"
+      }).then((res)=>{
+        console.log(res.data.message);
+        toast.success(res.data.message);
+        setEmail("");
+        setPassword("");
+    });
+    } catch (error) {
+      toast.error(error.response.data.message);
+    }
+  }
   return (
    <>
     <Container fluid style={{width:"100%",height:"100%"}}>
@@ -20,16 +43,20 @@ const Signin = () => {
                 delayspeed={3000}
               />
             </p>
+
             <Col xs={12} md={6} lg={6}>
                   <img src={juice} className='rounded' alt='juice' width={"90%"} height={"90%"} />
             </Col>
+
             <Col xs={12} md={6} lg={5} className='mt-5'>
-                <Form className='shadow-lg p-5 bg-white rounded' style={{height:"100%"}}>
-                <p className='text-center' style={{color:"orange",fontSize:"25px",fontWeight:"bold"}}>LOGIN</p>
+                <Form className='shadow-lg p-5 bg-white rounded' style={{height:"100%"}} onSubmit={handleSubmit}>
+                <p className='text-center' style={{color:"orange",fontSize:"25px",fontWeight:"500"}}>USER LOGIN</p>
                     <Form.Group className="mb-3 p-2" controlId="email">
                       <Form.Control
                         type="email"
                         placeholder="Email"
+                        value={email}
+                        onChange={(e)=>setEmail(e.target.value)}
                         style={{padding:"10px"}}
                         />
                     </Form.Group>
@@ -37,11 +64,13 @@ const Signin = () => {
                       <Form.Control
                         type="password"
                         placeholder="Password"
+                        value={password}
+                        onChange={(e)=>setPassword(e.target.value)}
                         style={{padding:"10px"}}
                         />
                     </Form.Group>
                     <div className='d-flex justify-content-center'>
-                    <Button variant='primary' className='w-25'>Login</Button>
+                    <Button variant='primary' type='submit' className='w-25'>Login</Button>
                     </div>
                     <p className='text-center mt-3 p-4'>If you have no account? <a href='/signup' style={{textDecoration:"none"}}>Signup</a></p>
                 </Form>

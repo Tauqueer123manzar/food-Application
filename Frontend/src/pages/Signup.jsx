@@ -62,7 +62,7 @@ const Signup = () => {
 
           <Col xs={12} md={6} lg={5} className='mt-5'>
             <Form className='shadow-lg p-5 bg-white rounded' style={{ height: '575px' }} onSubmit={handleSubmit}>
-              <p className='text-center' style={{ color: "orange", fontSize: "25px", fontWeight: "bold" }}>SIGNUP</p>
+              <p className='text-center' style={{ color: "orange", fontSize: "25px", fontWeight: "500" }}>USER SIGNUP</p>
 
               <Form.Group className='mb-3 p-2' controlId='name'>
                 <Form.Control

@@ -1,6 +1,9 @@
 const User=require("../model/UseSchema");
 const catchAsyncErrors=require("../middleware/catchasyncerrors");
+const Errorhandler=require("../middleware/Errorhandler");
+const Errormiddleware=require("../middleware/Errormiddleware");
 
+// ===================================================== User Register ===============================================
 exports.UserRegister=catchAsyncErrors(async(req,res,next)=>{
     const {name,email,password,role}=req.body;
     if(!name || !email || !password || !role){
@@ -40,3 +43,35 @@ exports.UserRegister=catchAsyncErrors(async(req,res,next)=>{
     });
 });
 
+// ================================================ User Login ========================================================
+exports.UserLogin=catchAsyncErrors(async(req,res,next)=>{
+    const {email,password,role}=req.body;
+    if(!email || !password || !role){
+        return res.status(400).json({
+            success:false,
+            message:"All fields are required"
+        });
+    }
+
+    const user=await User.findOne({email}).select("+password");
+
+    if(!user){
+        return res.status(400).json({
+            success:false,
+            message:"User not found"
+        })
+    }
+
+    const isMatch=await user.comparePassword(password);
+    if(!isMatch){
+        return res.status(400).json({
+            success:false,
+            message:"Incorrect Password"
+        });
+    };
+
+    res.status(200).json({
+        success:true,
+        message:"User Logged in Successfully",
+    });
+});
