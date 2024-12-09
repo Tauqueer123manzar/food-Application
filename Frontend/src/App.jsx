@@ -11,6 +11,8 @@ import PlaceOrder from './pages/PlaceOrder';
 import Signin from './pages/Signin';
 import Signup from './pages/Signup';
 import Report from './components/Report';
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './App.css'
 function App() {
 
@@ -30,6 +32,7 @@ function App() {
         <Route path='/report' element={<Report/>}/>
         <Route path='/placeorder' element={<PlaceOrder/>}/>
       </Routes>
+      <ToastContainer position='top-center'/>
     </Router>
     </>
   )
