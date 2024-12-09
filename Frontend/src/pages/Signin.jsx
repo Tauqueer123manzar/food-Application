@@ -2,13 +2,24 @@ import React from 'react';
 import { Container,Row,Col,Button,Form} from 'react-bootstrap';
 import Footer from '../components/Footer';
 import juice from '../assets/fast food.png';
+import { Typewriter } from 'react-simple-typewriter';
 const Signin = () => {
   return (
    <>
     <Container fluid style={{width:"100%",height:"100%"}}>
         <Row className='mt-5'>
             <h3 className='mt-5 text-center text-muted'>Welcome Back!</h3>
-            <p className='text-center'>Log in to continue managing your account and stay updated with our services.</p>
+            <p className='text-center' style={{ fontWeight: "400", fontFamily: "initial", fontSize: "25px", color:"orange"}}>
+              <Typewriter
+                words={["Log in to continue managing your account and stay updated with our services!"]}
+                loop={0}
+                cursor='true'
+                cursorstyle='_'
+                typespeed={100}
+                deletedspeed={80}
+                delayspeed={3000}
+              />
+            </p>
             <Col xs={12} md={6} lg={6}>
                   <img src={juice} className='rounded' alt='juice' width={"90%"} height={"90%"} />
             </Col>

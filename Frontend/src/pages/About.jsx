@@ -1,10 +1,35 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Card } from "react-bootstrap";
 import food from "../assets/food.jpg";
 import Footer from "../components/Footer";
 import { Typewriter } from 'react-simple-typewriter';
 import Accordion from 'react-bootstrap/Accordion';
+import { FaLeaf, FaUtensils, FaShippingFast, FaSmile } from "react-icons/fa";
+
 const About = () => {
+  const missionData = [
+    {
+      id: 1,
+      icon: "fas fa-utensils",
+      title: "Culinary Diversity",
+      description:
+        "We strive to bring diverse cuisines to your doorstep, allowing you to explore and enjoy a world of flavors from the comfort of your home.",
+    },
+    {
+      id: 2,
+      icon: "fas fa-clock",
+      title: "Timely Deliveries",
+      description:
+        "With advanced tracking and optimized logistics, we ensure your food arrives fresh and on time, every single time.",
+    },
+    {
+      id: 3,
+      icon: "fas fa-heart",
+      title: "Customer Satisfaction",
+      description:
+        "We prioritize your happiness by offering personalized recommendations, discounts, and seamless service for an exceptional experience.",
+    },
+  ];
   return (
     <>
       <Container
@@ -48,6 +73,8 @@ const About = () => {
             Better food for more people
           </h1>
         </div>
+
+        {/* ========================================== About Section ================================================= */}
         <Row className="mx-0 my-5">
           <Col xs={12} md={6} lg={5} className="p-4">
             <h1 className='mt-1 p-3' style={{ fontWeight: "700", fontFamily: "initial", fontSize: "45px" }}>
@@ -62,9 +89,9 @@ const About = () => {
               />
             </h1>
             <p className="text-muted text-justify mt-1 p-3" style={{ fontSize: "16px" }}>
-              At Foody, we believe that food brings people together and creates
-              unforgettable experiences. Whether you're craving a quick snack, a
-              hearty meal, or exploring diverse cuisines, Foody is here to
+              At Foody, we believe that food brings people together and creates unforgettable experiences.
+              Discover diverse cuisines, savor the finest meals, and let us redefine your dining moments with
+              innovation, convenience, and delight.Foody is here to
               satisfy your hunger and connect you with the best culinary
               delights. To make delicious food accessible to everyone while
               promoting convenience, quality, and diversity. We aim to
@@ -84,134 +111,98 @@ const About = () => {
             />
           </Col>
         </Row>
-        <hr
-          style={{
-            border: "4px dashed orange",
-            margin: 0,
-            padding: 0,
-          }}
-        />
+
 
         {/* ========================================== Our Vision ================================================= */}
-        <Row className="justify-content-center text-center">
-          <Col xs={12} md={8}>
-          <h1 className="text-center mt-4" style={{ fontFamily: "Times New Roman", fontWeight: "bold",borderBottom:"4px solid orange"}}>Our Vision</h1>
-            <p className="text-muted p-3" style={{ fontSize: "1rem" }}>
-              At <span style={{ color: "#ff5722", fontWeight: "bold" }}>Foody</span>,
-              our vision is to revolutionize the way people experience food. 
-              We aim to bridge the gap between food enthusiasts and the culinary world 
-              by providing a seamless platform for discovering, ordering, and savoring 
-              delightful meals. We believe in fostering connections between local restaurants
-              and communities. Through innovation and dedication, we strive to make every 
-              meal an unforgettable experience, whether you're dining in, taking out, or 
-              sharing with loved ones.
-            </p>
-          </Col>
+        <h1 className="text-center mt-4" style={{ fontFamily: "Times New Roman", fontWeight: "bold"}}>Our Vision</h1>
+        <Row className="my-4 text-center justify-content-center mx-4">
+          {[
+            { icon: <FaLeaf size={40} />, title: "Eco-Friendly Practices", text: "Promoting sustainability through eco-friendly packaging and operations." },
+            { icon: <FaUtensils size={40} />, title: "Culinary Excellence", text: "Connecting you to the best culinary experiences." },
+            { icon: <FaShippingFast size={40} />, title: "Fast Delivery", text: "Ensuring fresh, timely delivery of your favorite meals." },
+            { icon: <FaSmile size={40} />, title: "Customer Happiness", text: "Your satisfaction is our priority with unparalleled service." },
+          ].map((card, index) => (
+            <Col xs={12} sm={6} md={3} key={index} className="mb-3">
+              <Card className="text-center shadow-sm h-100">
+                <Card.Body>
+                  <div className="mb-3" style={{ color: "#ff5722" }}>{card.icon}</div>
+                  <Card.Title>{card.title}</Card.Title>
+                  <Card.Text className="text-muted">{card.text}</Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
         </Row>
-
 
         {/* ============================================== Our Mission ================================================== */}
-        <Row className="justify-content-center text-center">
-        <Col xs={12} md={8}>
-          <h2 style={{ fontFamily: "Times New Roman", fontWeight: "bold",borderBottom:"4px solid orange"}}>
-            Our Mission
-          </h2>
-          <p className="mt-3 text-muted p-3" style={{ fontSize: "1rem"}}>
-            At <span style={{ color: "#ff5722", fontWeight: "bold" }}>Foody</span>, 
-            our mission is to bring the joy of delicious food to your fingertips. 
-            We are dedicated to offering a platform that makes exploring cuisines, 
-            ordering meals, and connecting with local restaurants simple and convenient.
-            By leveraging technology and innovation, we aim to create a vibrant 
-            ecosystem where customers and food providers thrive together. We are 
-            committed to ensuring quality, reliability, and an exceptional food 
-            experience for every user, every time.
-          </p>
-        </Col>
-      </Row>
+        <Row className="justify-content-center text-center mt-5">
+            <h2
+              className="text-center"
+              style={{
+                fontFamily: "Times New Roman",
+                fontWeight: "bold",
+              }}
+            >
+              Our Mission
+            </h2>
+
+          {missionData.map((mission) => (
+            <Col
+              key={mission.id}
+              xs={12}
+              md={4}
+              lg={3}
+              className="p-3"
+              style={{
+                border: "1px solid #f8d7da",
+                background: "#fff",
+                borderRadius: "10px",
+                margin: "10px",
+                boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+              }}
+            >
+              <div className="text-center">
+                <i
+                  className={mission.icon}
+                  style={{
+                    fontSize: "20px",
+                    color: "orange",
+                    marginBottom: "10px",
+                  }}
+                ></i>
+                <h4 style={{ fontWeight: "600", fontFamily: "Arial" }}>
+                  {mission.title}
+                </h4>
+                <p className="text-muted" style={{ fontSize: "14px" }}>
+                  {mission.description}
+                </p>
+              </div>
+            </Col>
+          ))}
+        </Row>
+
         {/* ======================================= Frequently Asked Questions ======================================== */}
         <Row className="mt-5 justify-content-center">
-          <h2 className="text-center" style={{ fontFamily: "Times New Roman",fontWeight:"bold"}}>Frequently Asked Questions</h2>
-          <Col xs={12} md={6} lg={8} className="p-4 mb-2">
-            <Accordion defaultActiveKey={"0"} >
-              <Accordion.Item eventKey="0">
-                <Accordion.Header>
-                  Q1: What is the Foody app?
-                </Accordion.Header>
-                <Accordion.Body>
-                  A: The Foody app is a platform that connects food lovers with nearby restaurants, cafes, and delivery services. It allows users to browse menus, place orders, and enjoy meals delivered to their doorstep or for dine-in.
-                </Accordion.Body>
-              </Accordion.Item>
-
-              <Accordion.Item eventKey="1">
-                <Accordion.Header>
-                  Q2: How do I create an account on the Foody app?
-                </Accordion.Header>
-                <Accordion.Body>
-                  A: You can create an account by clicking the Sign Up button on the home page. Enter your name, email address, and phone number, and set a password. Alternatively, you can sign up using your Google or Facebook account.
-                </Accordion.Body>
-              </Accordion.Item>
-
-              <Accordion.Item eventKey="2">
-                <Accordion.Header>
-                  Q3: Can I customize my food order?
-                </Accordion.Header>
-                <Accordion.Body>
-                  A: Yes! While placing an order, you can add special instructions or modify your preferences (e.g., spice level, extra toppings, or removing ingredients). Simply use the Customize option while selecting your dish.
-                </Accordion.Body>
-              </Accordion.Item>
-
-              <Accordion.Item eventKey="3">
-                <Accordion.Header>
-                  Q4: How do I track my food delivery?
-                </Accordion.Header>
-                <Accordion.Body>
-                  A: After placing an order, go to the Order History section. You’ll find real-time tracking updates, including your food's preparation status and delivery location on a map.
-                </Accordion.Body>
-              </Accordion.Item>
-
-              <Accordion.Item eventKey="4">
-                <Accordion.Header>
-                  Q5: How can I cancel my order?
-                </Accordion.Header>
-                <Accordion.Body>
-                  A: You can cancel your order within the first few minutes after placing it. Go to the Order History, select the active order, and click Cancel Order. Note that cancellation policies may vary depending on the restaurant.
-                </Accordion.Body>
-              </Accordion.Item>
-
-              <Accordion.Item eventKey="5">
-                <Accordion.Header>
-                  Q6: Are there any delivery charges?
-                </Accordion.Header>
-                <Accordion.Body>
-                  A: Delivery charges depend on the restaurant and your location. Some restaurants may offer free delivery during special promotions or for orders above a certain amount.
-                </Accordion.Body>
-              </Accordion.Item>
-
-              <Accordion.Item eventKey="6">
-                <Accordion.Header>
-                  Q7: What payment options are available?
-                </Accordion.Header>
-                <Accordion.Body>
-                  A: The Foody app supports multiple payment methods, including:
-                  Credit/Debit cards
-                  UPI (e.g., Google Pay, PhonePe)
-                  Cash on Delivery (COD)
-                </Accordion.Body>
-              </Accordion.Item>
+          <Col xs={12} md={10}>
+            <h2 className="text-center" style={{ fontFamily: "Times New Roman", fontWeight: "bold" }}>Frequently Asked Questions</h2>
+            <Accordion className="my-4">
+              {[
+                { question: "What is the Foody app?", answer: "The Foody app connects food lovers with nearby restaurants and delivery services." },
+                { question: "How do I create an account?", answer: "Sign up using your email or social media accounts to start your food journey." },
+                { question: "Can I customize my order?", answer: "Yes, you can add special instructions for every dish while ordering." },
+                { question: "How do I track my order?", answer: "Use the Order History section to view real-time delivery tracking." },
+              ].map((faq, index) => (
+                <Accordion.Item eventKey={index.toString()} key={index}>
+                  <Accordion.Header>{faq.question}</Accordion.Header>
+                  <Accordion.Body>{faq.answer}</Accordion.Body>
+                </Accordion.Item>
+              ))}
             </Accordion>
           </Col>
+        </Row>
 
-        </Row>
-        <hr
-          style={{
-            border: "2px dashed orange",
-            margin: 0,
-            padding: 0,
-          }}
-        />
-        <Row className="mx-0 my-1">
-          <Footer />
-        </Row>
+        <hr style={{ border: "2px dashed orange", margin: 0, padding: 0 }} />
+        <Footer />
       </Container>
     </>
   );

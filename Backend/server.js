@@ -3,7 +3,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const userRoutes = require("./routes/UserRoutes");
 const cors = require("cors");
-const cookie=require("cookie-parser");
+// const cookie=require("cookie-parser");
 const dbconection = require("./database/dbconnection");
 const app = express();
 
@@ -24,7 +24,7 @@ app.use(
 
 app.use(express.json());
 app.use(express.static("public"));
-app.use(cookie());
+// app.use(cookie());
 app.use(express.urlencoded({ extended: true }));
 
 

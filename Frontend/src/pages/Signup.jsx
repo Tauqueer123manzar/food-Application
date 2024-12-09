@@ -3,6 +3,7 @@ import { Container, Row, Col, Button, Form } from 'react-bootstrap';
 import fries from '../assets/fries.png';
 import { toast } from 'react-toastify';
 import Footer from '../components/Footer';
+import { Typewriter } from 'react-simple-typewriter'
 import axios from 'axios';
 const Signup = () => {
   const[name,setName]=useState("");
@@ -44,14 +45,25 @@ const Signup = () => {
       <Container fluid style={{ width: "100%", height: "100%" }}>
         <Row className='mt-5'>
           <h3 className='mt-5 text-center text-muted'>Welcome!</h3>
-          <p className='text-center'>Start your journey with us by signing up. It only takes a few minutes!</p>
+          <p className='text-center' style={{ fontWeight: "400", fontFamily: "initial", fontSize: "25px", color: "orange" }}>
+              <Typewriter
+                words={["Start your journey with us by signing up. It only takes a few minutes!"]}
+                loop={0}
+                cursor='true'
+                cursorstyle='_'
+                typespeed={100}
+                deletedspeed={80}
+                delayspeed={3000}
+              />
+            </p>
           <Col xs={12} md={6} lg={6}>
-            <img src={fries} className='rounded' alt='juice' width={"100%"} height={"90%"} />
+            <img src={fries} className='rounded' alt='juice' width={"90%"} height={"90%"} />
           </Col>
 
           <Col xs={12} md={6} lg={5} className='mt-5'>
-            <Form className='shadow-lg p-5 bg-white rounded' style={{ height: '550px' }} onSubmit={handleSubmit}>
+            <Form className='shadow-lg p-5 bg-white rounded' style={{ height: '575px' }} onSubmit={handleSubmit}>
               <p className='text-center' style={{ color: "orange", fontSize: "25px", fontWeight: "bold" }}>SIGNUP</p>
+
               <Form.Group className='mb-3 p-2' controlId='name'>
                 <Form.Control
                   type='text'
