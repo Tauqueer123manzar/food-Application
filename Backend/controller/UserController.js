@@ -2,7 +2,7 @@ const User=require("../model/UseSchema");
 const catchAsyncErrors=require("../middleware/catchasyncerrors");
 const Errorhandler=require("../middleware/Errorhandler");
 const Errormiddleware=require("../middleware/Errormiddleware");
-
+const jwt=require("jsonwebtoken");
 // ===================================================== User Register ===============================================
 exports.UserRegister=catchAsyncErrors(async(req,res,next)=>{
     const {name,email,password,role}=req.body;
@@ -27,6 +27,8 @@ exports.UserRegister=catchAsyncErrors(async(req,res,next)=>{
         password,
         role
     });
+
+    const token=generateToken(user);
 
     const validRoles=["User","Admin"];
     if(!validRoles.includes(role)){
@@ -69,7 +71,8 @@ exports.UserLogin=catchAsyncErrors(async(req,res,next)=>{
             message:"Incorrect Password"
         });
     };
-
+   
+    const token=generateToken(user);
     res.status(200).json({
         success:true,
         message:"User Logged in Successfully",

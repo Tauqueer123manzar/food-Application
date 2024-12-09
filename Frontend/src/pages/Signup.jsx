@@ -3,7 +3,8 @@ import { Container, Row, Col, Button, Form } from 'react-bootstrap';
 import fries from '../assets/fries.png';
 import { toast } from 'react-toastify';
 import Footer from '../components/Footer';
-import { Typewriter } from 'react-simple-typewriter'
+import { Typewriter } from 'react-simple-typewriter';
+import { Navigate } from 'react-router-dom';
 import axios from 'axios';
 const Signup = () => {
   const[name,setName]=useState("");
