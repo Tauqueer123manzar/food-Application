@@ -50,7 +50,7 @@ const Signup = () => {
 
   return (
     <>
-      <Container fluid style={{ width: "100%", height: "100%" }}>
+      <Container fluid style={{ width: "100%", height: "100%",backgroundColor:"wheat"}}>
         <Row className='mt-5'>
           <h3 className='mt-5 text-center text-muted'>Welcome!</h3>
           <p className='text-center' style={{ fontWeight: "400", fontFamily: "initial", fontSize: "25px", color: "orange" }}>
@@ -65,14 +65,14 @@ const Signup = () => {
               />
             </p>
           <Col xs={12} md={6} lg={6}>
-            <img src={fries} className='rounded' alt='juice' width={"90%"} height={"90%"} />
+            <img src={fries} className='rounded' alt='juice' width={"90%"} height={"80%"} />
           </Col>
 
           <Col xs={12} md={6} lg={5} className='mt-5'>
-            <Form className='shadow-lg p-5 bg-white rounded' style={{ height: '575px' }} onSubmit={handleSubmit}>
+            <Form className='shadow-lg p-5 rounded' style={{ height: '80%',backgroundColor:"lightyellow"}} onSubmit={handleSubmit}>
               <p className='text-center' style={{ color: "orange", fontSize: "25px", fontWeight: "500" }}>USER SIGNUP</p>
 
-              <Form.Group className='mb-3 p-2' controlId='name'>
+              <Form.Group className='mb-3 p-1' controlId='name'>
                 <Form.Control
                   type='text'
                   placeholder='Name'
@@ -82,7 +82,7 @@ const Signup = () => {
                 />
               </Form.Group>
 
-              <Form.Group className="mb-3 p-2" controlId="email">
+              <Form.Group className="mb-3 p-1" controlId="email">
                 <Form.Control
                   type="email"
                   placeholder="Email"
@@ -92,7 +92,7 @@ const Signup = () => {
                 />
               </Form.Group>
 
-              <Form.Group className="mb-3 p-2 " controlId="password">
+              <Form.Group className="mb-3 p-1 " controlId="password">
                 <Form.Control
                   type="password"
                   placeholder="Password"
@@ -102,7 +102,7 @@ const Signup = () => {
                 />
               </Form.Group>
 
-              <Form.Group className='mb-3 p-2' controlId='confirmpassword'>
+              <Form.Group className='mb-3 p-1' controlId='confirmpassword'>
                 <Form.Control
                   type='password'
                   placeholder='Confrim Password'
@@ -119,7 +119,9 @@ const Signup = () => {
           </Col>
         </Row>
         <hr style={{ border: "2px dashed orange", margin: "0", padding: "0", marginTop: "10px" }} />
-        <Row>
+      </Container>
+      <Container fluid style={{ width: "100%", height: "100%"}}>
+      <Row>
           <Footer />
         </Row>
       </Container>

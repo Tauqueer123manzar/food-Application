@@ -38,7 +38,7 @@ const Signin = () => {
 
   return (
     <>
-      <Container fluid style={{ width: '100%', minHeight: '100vh' }}>
+      <Container fluid style={{ width: '100%', height:"100%",backgroundColor:"wheat"}}>
         <Row className="mt-5">
           <h3 className="mt-5 text-center text-muted">Welcome Back!</h3>
           <p
@@ -74,8 +74,8 @@ const Signin = () => {
 
           <Col xs={12} md={6} lg={5} className="mt-5">
             <Form
-              className="shadow-lg p-5 bg-white rounded"
-              style={{ minHeight: '100%' }}
+              className="shadow-lg p-5 rounded"
+              style={{ width:"100%",height:"90%",backgroundColor:"lightyellow"}}
               onSubmit={handleSubmit}
             >
               <p
@@ -127,7 +127,9 @@ const Signin = () => {
             padding: '0',
           }}
         />
-        <Row className="mt-2">
+      </Container>
+      <Container fluid style={{width:"100%",height:"100%"}}>
+      <Row className="mt-2">
           <Footer />
         </Row>
       </Container>
