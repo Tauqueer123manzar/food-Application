@@ -5,6 +5,7 @@ const userRoutes = require("./routes/UserRoutes");
 const cors = require("cors");
 // const cookie=require("cookie-parser");
 const dbconection = require("./database/dbconnection");
+const bodyparser=require("body-parser");
 const app = express();
 
 dotenv.config({ path: "./config.env" });
@@ -24,7 +25,7 @@ app.use(
 
 app.use(express.json());
 app.use(express.static("public"));
-// app.use(cookie());
+app.use(bodyparser.json());
 app.use(express.urlencoded({ extended: true }));
 
 

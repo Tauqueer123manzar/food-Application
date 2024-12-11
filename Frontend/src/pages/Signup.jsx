@@ -4,13 +4,15 @@ import fries from '../assets/fries.png';
 import { toast } from 'react-toastify';
 import Footer from '../components/Footer';
 import { Typewriter } from 'react-simple-typewriter';
-import { Navigate } from 'react-router-dom';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 const Signup = () => {
   const[name,setName]=useState("");
   const[email,setEmail]=useState("");
   const[password,setPassword]=useState("");
   const[confirmpassword,setConfirmpassword]=useState("");
+
+  const navigate=useNavigate();
   
   const handleSubmit=async(e)=>{
     e.preventDefault();
@@ -25,12 +27,17 @@ const Signup = () => {
     },
   {
     withcredentials:true,
+    method:"POST",
     headers:{
        "Content-Type":"application/json"
-    }
+    },
+    body:JSON.stringify({
+      name,email,password,confirmpassword
+    })
   }).then((res)=>{
     console.log(res.data.message);
     toast.success(res.data.message);
+    navigate("/login");
     setName("");
     setEmail("");
     setPassword("");
