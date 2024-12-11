@@ -3,7 +3,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const userRoutes = require("./routes/UserRoutes");
 const cors = require("cors");
-// const cookie=require("cookie-parser");
+const MessageRouter=require("./routes/MessageRouter");
 const dbconection = require("./database/dbconnection");
 const bodyparser=require("body-parser");
 const app = express();
@@ -30,6 +30,7 @@ app.use(express.urlencoded({ extended: true }));
 
 
 app.use("/api/v1/user", userRoutes);
+app.use("/api/v1/message",MessageRouter);
 
 app.listen(PORT, (req, res) => {
     console.log(`Server is running at PORT: ${PORT}`);
