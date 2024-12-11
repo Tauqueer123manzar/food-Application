@@ -1,19 +1,10 @@
-exports.generateToken=async(user,message,statusCode,res)=>{
- const token=await user.generateToken();
- console.log("Generate Token",token);
- let cookieName;
+const GenerateToken = async (user, message, statusCode, res) => {
+    const token = await user.generateToken();
+    let cookieName = user.role === "User" ? "CustomerToken" : "AdminToken";
 
- if(user.role==="User"){
-    cookieName="userToken";
- }else{
-    cookieName="adminToken"
- }
-
- res.status(statusCode).cookie(cookieName,token).json({
-    success:true,
-    message,
-    user,
-    token,
-    role:user.role
- });
+    res.status(statusCode)
+        .cookie(cookieName, token, { httpOnly: true })
+        .json({ success: true, message, token, role: user.role });
 };
+
+module.exports = GenerateToken;

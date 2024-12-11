@@ -31,6 +31,8 @@ const Signin = () => {
       setEmail('');
       setPassword('');
       navigate('/');
+      localStorage.setItem('token',res.data.token);
+      localStorage.setItem('role',res.data.role);
     } catch (error) {
       toast.error(error.response?.data?.message || 'Something went wrong!');
     }

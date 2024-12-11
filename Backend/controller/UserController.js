@@ -1,24 +1,17 @@
 const User=require("../model/UseSchema");
 const catchAsyncErrors=require("../middleware/catchasyncerrors");
 const Errorhandler=require("../middleware/Errorhandler");
-// const Errormiddleware=require("../middleware/Errormiddleware");
-// const jwt=require("jsonwebtoken");
+const GenerateToken=require("../utils/jwttoken");
 // ===================================================== User Register ===============================================
 exports.UserRegister=catchAsyncErrors(async(req,res,next)=>{
     const {name,email,password,role}=req.body;
     if(!name || !email || !password || !role){
-        return res.status(400).json({
-            success:false,
-            message:"All fields are required"
-        });
+       return next(new Errorhandler("All fields are required",400));
     }
 
     let user=await User.findOne({email});
     if(user){
-        return res.status(400).json({
-            success:false,
-            message:"User already exists"
-        });
+       return next(new Errorhandler("User Already exists",400));
     }
 
     user=await User.create({
@@ -28,8 +21,6 @@ exports.UserRegister=catchAsyncErrors(async(req,res,next)=>{
         role
     });
 
-    // const token=generateToken(user);
-
     const validRoles=["User","Admin"];
     if(!validRoles.includes(role)){
         return res.status(400).json({
@@ -38,43 +29,26 @@ exports.UserRegister=catchAsyncErrors(async(req,res,next)=>{
         });
     };
 
-
-    res.status(200).json({
-        success:true,
-        message:"User Registered successfully"
-    });
+    GenerateToken(user,"User Registered Successfully",200,res);
 });
 
 // ================================================ User Login ========================================================
 exports.UserLogin=catchAsyncErrors(async(req,res,next)=>{
     const {email,password,role}=req.body;
     if(!email || !password || !role){
-        return res.status(400).json({
-            success:false,
-            message:"All fields are required"
-        });
+        return next(new Errorhandler("All fields are required",400));
     }
 
     const user=await User.findOne({email}).select("+password");
 
     if(!user){
-        return res.status(400).json({
-            success:false,
-            message:"User not found"
-        })
+       return next(new Errorhandler("User not found",400));
     }
 
     const isMatch=await user.comparePassword(password);
     if(!isMatch){
-        return res.status(400).json({
-            success:false,
-            message:"Incorrect Password"
-        });
+       return next(new Errorhandler("Invalid Password",400));
     };
    
-    // const token=generateToken(user);
-    res.status(200).json({
-        success:true,
-        message:"User Logged in Successfully",
-    });
+    GenerateToken(user,"User Logged In Successfully",200,res);
 });

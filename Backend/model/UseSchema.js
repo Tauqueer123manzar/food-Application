@@ -1,7 +1,7 @@
 const mongoose=require("mongoose");
 const bcrypt=require("bcryptjs");
-// const validator=require("validator");
-// const jwt=require("jsonwebtoken");
+require('dotenv').config();
+const jwt=require("jsonwebtoken");
 
 const userschema=new mongoose.Schema({
     name:{
@@ -40,7 +40,6 @@ userschema.methods.generateToken=async function(){
          });
          return token;
     } catch (error) {
-        console.log(`${error.message}`);
         return error.message;
     }
 }
