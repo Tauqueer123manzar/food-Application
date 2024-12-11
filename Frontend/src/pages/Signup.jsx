@@ -65,11 +65,11 @@ const Signup = () => {
               />
             </p>
           <Col xs={12} md={6} lg={6}>
-            <img src={fries} className='rounded' alt='juice' width={"90%"} height={"80%"} />
+            <img src={fries} className='rounded' alt='juice' width={"90%"} height={"90%"} />
           </Col>
 
           <Col xs={12} md={6} lg={5} className='mt-5'>
-            <Form className='shadow-lg p-5 rounded' style={{ height: '80%',backgroundColor:"lightyellow"}} onSubmit={handleSubmit}>
+            <Form className='shadow-lg p-5 rounded' style={{ height: '88%',backgroundColor:"lightyellow"}} onSubmit={handleSubmit}>
               <p className='text-center' style={{ color: "orange", fontSize: "25px", fontWeight: "500" }}>USER SIGNUP</p>
 
               <Form.Group className='mb-3 p-1' controlId='name'>
@@ -112,7 +112,7 @@ const Signup = () => {
               </Form.Group>
 
               <div className='d-flex justify-content-center'>
-                <Button variant='primary' className='w-25' type='submit'>Sign Up</Button>
+                <Button variant='primary' className='w-50' type='submit'>Sign Up</Button>
               </div>
               <p className='text-center mt-3 p-4'>If you have already an account? <a href='/login' style={{ textDecoration: "none" }}>Login</a></p>
             </Form>
