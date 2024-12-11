@@ -52,3 +52,6 @@ exports.UserLogin=catchAsyncErrors(async(req,res,next)=>{
    
     GenerateToken(user,"User Logged In Successfully",200,res);
 });
+
+
+

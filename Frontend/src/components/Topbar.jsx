@@ -2,8 +2,23 @@ import React from 'react'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import Button from 'react-bootstrap/Button';
+import { useNavigate } from 'react-router-dom';
+import {toast} from 'react-toastify';
 const Topbar = () => {
+
+  const token=localStorage.getItem('token');
+  const navigate=useNavigate();
+  const handlelogout=()=>{
+   try {
+    toast.success("Logout Successfully");
+    localStorage.clear();
+    navigate("/login");
+   } catch (error) {
+     console.log("Logout error",error);
+     toast.error("Something went wrong");
+   }
+  }
+
   return (
    <>
      <Navbar expand="lg" className="bg-body-tertiary shadow fixed-top">
@@ -21,7 +36,11 @@ const Topbar = () => {
             <Nav.Link href='/service' className='p-2 service text-dark'>Services</Nav.Link>
             <Nav.Link href='/contact' className='p-2 contact text-dark'>Contact</Nav.Link>
           </Nav>
-           <Nav.Link href='/login' className='p-2 text-muted fs-5' style={{textAlign:"center"}}>Login</Nav.Link>
+          {
+           token?
+           <Nav.Link className='p-2 text-muted fs-5' style={{textAlign:"center"}} onClick={handlelogout}>Logout</Nav.Link>
+           :<Nav.Link href='/login' className='p-2 text-muted fs-5' style={{textAlign:"center"}}>Login</Nav.Link>
+          }
            <Nav.Link href='/cart' className='p-2 text-muted fs-5' style={{textAlign:"center"}}>Cart</Nav.Link>
         </Navbar.Collapse>
       </Container>
