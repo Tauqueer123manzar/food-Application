@@ -79,6 +79,9 @@
     border-radius: 25px;
   }
   
+  .no-caret .dropdown-toggle::after {
+    display: none;
+  }
   
   /* Responsive Design */
   @media (max-width: 768px) {

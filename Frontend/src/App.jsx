@@ -14,6 +14,8 @@ import Report from './components/Report';
 import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css'
+import Profile from './pages/Profile';
+import Order from './pages/Order';
 function App() {
 
   return (
@@ -31,6 +33,8 @@ function App() {
         <Route path='/signup' element={<Signup/>}/>
         <Route path='/report' element={<Report/>}/>
         <Route path='/placeorder' element={<PlaceOrder/>}/>
+        <Route path='/profile' element={<Profile/>}/>
+        <Route path='/order' element={<Order/>}/>
       </Routes>
       <ToastContainer position='top-center'/>
     </Router>

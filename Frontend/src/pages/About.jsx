@@ -185,7 +185,7 @@ const About = () => {
         <Row className="mt-5 justify-content-center">
           <Col xs={12} md={10}>
             <h2 className="text-center" style={{ fontFamily: "Times New Roman", fontWeight: "bold" }}>Frequently Asked Questions</h2>
-            <Accordion className="my-4">
+            <Accordion className="my-4 m-4">
               {[
                 { question: "What is the Foody app?", answer: "The Foody app connects food lovers with nearby restaurants and delivery services." },
                 { question: "How do I create an account?", answer: "Sign up using your email or social media accounts to start your food journey." },
