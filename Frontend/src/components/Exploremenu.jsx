@@ -46,6 +46,8 @@ const Exploremenu = ({category,setCategory}) => {
      <Container fluid style={{maxWidth:"100%",maxHeight:"100%"}}>
      <Row className='my-2'>
         <h2 className="text-center my-4" style={{fontFamily:"italic",fontWeight:"bold"}}>Explore our food menu</h2>
+        <p className='text-center text-muted w-100'>Dive into a world of culinary delights with our carefully curated food menu.<br></br>
+        From mouth-watering appetizers to indulgent desserts we have something special just for you..<br></br></p>
         <Carousel responsive={responsive}>
           {foodData.map((food,index)=>(
               <Col xs={12} md={4} lg={12} key={index} className='d-flex flex-column align-items-center menu-item'
