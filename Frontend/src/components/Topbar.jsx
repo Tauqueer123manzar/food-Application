@@ -43,13 +43,13 @@ const Topbar = () => {
             </Nav>
             {
               token ? (
-                <NavDropdown className='p-2 text-muted fs-5 no-caret' id="navbarScrollingDropdown" style={{textAlign:"center"}} title="Logout">
+                <NavDropdown className='text-muted fs-5 no-caret' id="navbarScrollingDropdown" title="Logout">
                   <NavDropdown.Item href='/profile'>Profile</NavDropdown.Item>
                   <NavDropdown.Item href='/order'>Order</NavDropdown.Item>
                   <NavDropdown.Item onClick={handlelogout}>Logout</NavDropdown.Item>
                 </NavDropdown>
               ) : (
-                <Nav.Link href="/login" className="p-2 text-muted fs-5" style={{ textAlign: 'center' }}>
+                <Nav.Link href="/login" className="text-muted fs-5">
                   Login
                 </Nav.Link>
               )

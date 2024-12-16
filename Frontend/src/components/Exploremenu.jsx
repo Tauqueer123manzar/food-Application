@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container,Row,Col,Image } from 'react-bootstrap';
+import { Container,Row,Col,Image} from 'react-bootstrap';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { motion } from "framer-motion";
@@ -14,6 +14,7 @@ import sandwich from '../assets/sanwitch.jpg';
 import Shawrma from '../assets/Shawarma.jpg';
 import sweet from '../assets/sweet.jpg';
 import vegbiryani from '../assets/veg biryani.jpg';
+import Searchbar from './Searchbar';
 import '../App.css';
 const Exploremenu = ({category,setCategory}) => {
     const foodData = [
@@ -43,9 +44,12 @@ const Exploremenu = ({category,setCategory}) => {
       };
   return (
     <>
-     <Container fluid style={{maxWidth:"100%",maxHeight:"100%"}}>
+     <Container fluid style={{width:"100%",height:"100%"}}>
      <Row className='my-2'>
         <h2 className="text-center my-4" style={{fontFamily:"italic",fontWeight:"bold"}}>Explore our food menu</h2>
+        <div className="d-flex justify-content-center align-items-center w-100 mb-4">
+          <Searchbar />
+        </div>
         <p className='text-center text-muted w-100'>Dive into a world of culinary delights with our carefully curated food menu.<br></br>
         From mouth-watering appetizers to indulgent desserts we have something special just for you..<br></br></p>
         <Carousel responsive={responsive}>

@@ -5,6 +5,7 @@ import Exploremenu from '../components/Exploremenu';
 import food from '../assets/food.png';
 import Footer from '../components/Footer';
 import { useScroll } from 'framer-motion';
+import Searchbar from '../components/Searchbar';
 const Home = () => {
   const [category,setCategory]=useState("All");
   return (

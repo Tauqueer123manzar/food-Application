@@ -84,6 +84,10 @@
   .no-caret .dropdown-toggle::after {
     display: none;
   }
+
+  .dropdown-menu{
+    --bs-dropdown-min-width: 8rem;
+  }
   
   /* Responsive Design */
   @media (max-width: 768px) {
