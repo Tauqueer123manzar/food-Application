@@ -45,10 +45,10 @@ const Exploremenu = ({category,setCategory}) => {
   return (
     <>
      <Container fluid style={{width:"100%",height:"100%"}}>
-     <Row className='my-2 justiy-content-center'>
+     <Row className='my-2 d-flex justify-content-center align-items-center'>
         <h2 className="text-center my-4" style={{fontFamily:"italic",fontWeight:"bold"}}>Explore our food menu</h2>
         <div className="search-container">
-          <Searchbar className="search-bar"/>
+          <Searchbar/>
         </div>
         <p className='text-center text-muted w-100'>Dive into a world of culinary delights with our carefully curated food menu.<br></br>
         From mouth-watering appetizers to indulgent desserts we have something special just for you..<br></br></p>
