@@ -10,10 +10,11 @@ const Searchbar = () => {
           <InputGroup
             className="rounded-pill p-2"
             style={{
-              maxWidth: "600px",
+              maxWidth: "650px",
               width: "100%",
               backgroundColor: "wheat",
               overflow: "hidden",
+              height:"65px"
             }}
           >
             {/* Left Search Icon */}
@@ -42,7 +43,7 @@ const Searchbar = () => {
             <Button
               variant="warning"
               style={{
-                borderRadius: "50%",
+                borderRadius: "80%",
                 width: "40px",
                 height: "40px",
                 display: "flex",
