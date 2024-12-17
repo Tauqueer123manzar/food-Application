@@ -3,17 +3,18 @@ import { Container, Row, Col, Button} from 'react-bootstrap';
 import { Typewriter } from 'react-simple-typewriter';
 import Exploremenu from '../components/Exploremenu';
 import food from '../assets/food.png';
+// import food from '../assets/food hunt.png';
 import Footer from '../components/Footer';
 const Home = () => {
   const [category,setCategory]=useState("All");
   return (
     <>
-      <Container fluid style={{ maxWidth: "100%", maxHeight: "100vh" }}>
+      <Container fluid style={{width:"100%",height:"100%"}}>
         <Row className='mt-5'>
           <Col xs={12} md={6} lg={5}>
             <h1 className='mt-3 p-4' style={{ fontWeight: "700", fontFamily: "initial", fontSize: "45px" }}>
               <Typewriter
-                words={['Delicious Food, Delivered Fresh.', 'Crave, Order, Enjoy!', 'Tasty Treats Anytime!']}
+                words={['Delicious Food, Quality.', 'Crave, Order, Enjoy!', 'Tasty Treats Anytime!']}
                 loop={0}
                 cursor='true'
                 cursorstyle='_'

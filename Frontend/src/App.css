@@ -94,7 +94,22 @@
     align-items: center;
     width: 100%;
     margin-bottom: 20px;
-    margin-left: 600px;
+    position: relative;
+  }
+
+  .search-container{
+    position:absolute;
+    top: 52%;
+    left: 50%;
+    transform: translate(-30%,180%);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .paragraph{
+    margin-top: 120px;
+    font-size: 16px;
   }
   
   /* Responsive Design */
@@ -111,8 +126,13 @@
       font-size: 1rem;
     }
     .search-container{
-        margin-left: 0px;
+      position: absolute;
+      top: 140%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      width: 100%  
     }
+
   }
   
 @media (min-width:240px) and (max-width:768px) {
@@ -131,4 +151,8 @@
     .custom-card .card-link{
         font-size: 0.9rem;
     }
+}
+
+@media (min-width:768px) and(max-width:1440px) {
+  
 }
