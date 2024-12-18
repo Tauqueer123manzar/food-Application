@@ -17,7 +17,17 @@ import './App.css'
 import Profile from './pages/Profile';
 import Order from './pages/Order';
 import Menu from './pages/Menu';
+import photo from './assets/Tauqueer.jpg';
 function App() {
+  const userData = {
+    name: "Md Tauqueer Manzar",
+    location: "Hyderabad, India",
+    profilePicture: photo, // Replace with actual URL
+    reviews: 10,
+    photos: 5,
+    followers: 200,
+  };
+
 
   return (
     <>
@@ -35,7 +45,7 @@ function App() {
         <Route path='/menu' element={<Menu/>}/>
         <Route path='/report' element={<Report/>}/>
         <Route path='/placeorder' element={<PlaceOrder/>}/>
-        <Route path='/profile' element={<Profile/>}/>
+        <Route path='/profile' element={<Profile user={userData}/>}/>
         <Route path='/order' element={<Order/>}/>
       </Routes>
       <ToastContainer position='top-center'/>

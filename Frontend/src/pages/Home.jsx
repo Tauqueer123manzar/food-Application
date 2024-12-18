@@ -5,6 +5,7 @@ import Exploremenu from '../components/Exploremenu';
 import food from '../assets/food.png';
 // import food from '../assets/food hunt.png';
 import Footer from '../components/Footer';
+import Foodmenu from '../components/Foodmenu';
 const Home = () => {
   const [category,setCategory]=useState("All");
   return (
@@ -34,6 +35,7 @@ const Home = () => {
 
         {/* =================================== Food categories ============================================= */}
         <Exploremenu category={category} setCategory={setCategory}/>
+             <Foodmenu/>
         <hr style={{border:"2px dashed orange", margin:"0",padding:"0"}}/>
       <Footer/>
       </Container>

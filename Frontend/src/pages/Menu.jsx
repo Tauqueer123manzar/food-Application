@@ -1,8 +1,8 @@
 import React from 'react'
 import { Button, Container, Row, Col, Card } from 'react-bootstrap'
-import foodData from '../../fooddata'
 import Footer from '../components/Footer'
 import '../App.css'
+import Foodmenu from '../components/Foodmenu'
 const Menu = () => {
     return (
         <>
@@ -24,23 +24,7 @@ const Menu = () => {
                         <Button variant="white" style={{ width: "120px", borderRadius: "30px", height: "65px", fontWeight: "500" }} className='shadow p-2 m-1 text-danger'>Biscuit</Button>
                     </Col>
                 </Row>
-
-                <div className='d-flex justify-content-center mt-5' style={{ width: "100%", height: "100%",backgroundColor:"lightpink"}}>
-                    <Row className="p-2">
-                        {foodData.map((data) => (
-                            <Col xs={12} sm={6} md={4} lg={3} className="mb-4" key={data.id}>
-                                <Card style={{ width: "22rem",height:"375px"}} className='shadow card-box'>
-                                    <Card.Img variant="top" src={data.image} alt={data.title} style={{height:"200px"}} />
-                                    <Card.Body>
-                                        <Card.Title>{data.title}</Card.Title>
-                                        <Card.Text>Price: ₹{data.price}</Card.Text>
-                                        <Button variant="primary" className='w-100 mt-5' href='/cart'>Add to Cart</Button>
-                                    </Card.Body>
-                                </Card>
-                            </Col>
-                        ))}
-                    </Row>
-                </div>
+                <Foodmenu/>
             </Container>
             <div>
                 <Footer/>
