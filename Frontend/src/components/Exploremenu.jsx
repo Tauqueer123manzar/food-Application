@@ -50,7 +50,7 @@ const Exploremenu = ({category,setCategory}) => {
         <div className="search-container">
           <Searchbar className="search-bar"/>
         </div>
-        <p className='text-center text-muted w-100 paragraph' style={{marginTop:"120px"}}>Dive into a world of culinary delights with our carefully curated food menu.<br></br>
+        <p className='text-center text-muted w-100 paragraph' style={{marginTop:"110px"}}>Dive into a world of culinary delights with our carefully curated food menu.<br></br>
         From mouth-watering appetizers to indulgent desserts we have something special just for you..<br></br></p>
         <Carousel responsive={responsive}>
           {foodData.map((food,index)=>(
