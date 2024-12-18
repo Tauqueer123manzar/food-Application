@@ -2,10 +2,11 @@ import React from 'react'
 import { Button, Container, Row, Col, Card } from 'react-bootstrap'
 import foodData from '../../fooddata'
 import Footer from '../components/Footer'
+import '../App.css'
 const Menu = () => {
     return (
         <>
-            <Container fluid style={{ width: "100%", height: "100%" }} className='mt-2'>
+            <Container fluid style={{ width: "100%", height: "100%",backgroundColor:"lightpink" }} className='mt-2'>
                 <h1 className='text-center' style={{ marginTop: "75px", fontFamily: "initial", fontWeight: "bold" }}>Our Food Menu</h1>
 
                 <Row className='d-flex justify-content-center'>
@@ -24,16 +25,16 @@ const Menu = () => {
                     </Col>
                 </Row>
 
-                <div className='d-flex justify-content-center mt-5' style={{ width: "100%", height: "100%" }}>
+                <div className='d-flex justify-content-center mt-5' style={{ width: "100%", height: "100%",backgroundColor:"lightpink"}}>
                     <Row className="p-2">
                         {foodData.map((data) => (
                             <Col xs={12} sm={6} md={4} lg={3} className="mb-4" key={data.id}>
-                                <Card style={{ width: "21rem",height:"375px" }}>
+                                <Card style={{ width: "22rem",height:"375px"}} className='shadow card-box'>
                                     <Card.Img variant="top" src={data.image} alt={data.title} style={{height:"200px"}} />
                                     <Card.Body>
                                         <Card.Title>{data.title}</Card.Title>
                                         <Card.Text>Price: ₹{data.price}</Card.Text>
-                                        <Button variant="primary">Add to Cart</Button>
+                                        <Button variant="primary" className='w-100 mt-5' href='/cart'>Add to Cart</Button>
                                     </Card.Body>
                                 </Card>
                             </Col>
