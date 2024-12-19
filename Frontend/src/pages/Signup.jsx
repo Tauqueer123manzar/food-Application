@@ -14,40 +14,77 @@ const Signup = () => {
 
   const navigate=useNavigate();
   
-  const handleSubmit=async(e)=>{
-    e.preventDefault();
-    console.log('Form submitted',name,email,password,confirmpassword);
-   try {
-    await axios.post("http://localhost:5000/api/v1/user/register",{
-      name,
-      email,
-      password,
-      confirmpassword,
-      role:"User"
-    },
-  {
-    withcredentials:true,
-    method:"POST",
-    headers:{
-       "Content-Type":"application/json"
-    },
-    body:JSON.stringify({
-      name,email,password,confirmpassword
-    })
-  }).then((res)=>{
-    console.log(res.data.message);
-    toast.success(res.data.message);
-    navigate("/login");
-    setName("");
-    setEmail("");
-    setPassword("");
-    setConfirmpassword("");
-  })
-   } catch (error) {
-    toast.error(error.response.data.message);
-   }
-  };
+  // const handleSubmit=async(e)=>{
+  //   e.preventDefault();
+  //   console.log('Form submitted',name,email,password,confirmpassword);
+  //  try {
+  //   await axios.post(`
+  //     ${import.meta.env.VITE_BASE_URL}/api/v1/user/signup`,{
+  //     name,
+  //     email,
+  //     password,
+  //     confirmpassword,
+  //     role:"User"
+  //   },
+  // {
+  //   withcredentials:true,
+  //   method:"POST",
+  //   headers:{
+  //      "Content-Type":"application/json"
+  //   },
+  //   body:JSON.stringify({
+  //     name,email,password,confirmpassword
+  //   })
+  // }).then((res)=>{
+  //   console.log(res.data.message);
+  //   toast.success(res.data.message);
+  //   navigate("/login");
+  //   setName("");
+  //   setEmail("");
+  //   setPassword("");
+  //   setConfirmpassword("");
+  // })
+  //  } catch (error) {
+  //   toast.error(error.response.data.message);
+  //  }
+  // };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log('Form submitted', name, email, password, confirmpassword);
+  
+    try {
+      const response = await axios.post(
+        `${import.meta.env.VITE_BASE_URL}/api/v1/user/signup`,
+        {
+          name,
+          email,
+          password,
+          confirmpassword,
+          role: "User",
+        },
+        {
+          withCredentials: true, // Note: This ensures cookies are sent/received.
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+  
+      // Handle success response
+      console.log(response.data.message);
+      toast.success(response.data.message);
+      navigate("/login");
+      setName("");
+      setEmail("");
+      setPassword("");
+      setConfirmpassword("");
+    } catch (error) {
+      // Handle error response
+      console.error(error.response?.data?.message || "An error occurred");
+      toast.error(error.response?.data?.message || "An error occurred");
+    }
+  };
   return (
     <>
       <Container fluid style={{ width: "100%", height: "100%",backgroundColor:"wheat"}}>

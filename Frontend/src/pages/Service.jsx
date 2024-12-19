@@ -123,7 +123,7 @@ const Service = () => {
               discounts, and cashback offers that add more value to your dining experience.</p>
 
               <div className='p-3'>
-              <Button variant='primary' className='btn btn-outline-warning' href='/'><span style={{fontSize:"20px"}}>Explore Menu</span></Button>
+              <Button variant='primary' className='btn btn-outline-warning' href='/menu'><span style={{fontSize:"20px"}}>Explore Menu</span></Button>
               </div>
           </Col>
           <Col xs={12} md={5} lg={7} className='mt-5'>
@@ -141,7 +141,7 @@ const Service = () => {
                 <Card.Title>{food.title}</Card.Title>
                 <Card.Text>{food.description}</Card.Text>
                 <h5>₹{food.price}</h5>
-                <Button variant="primary" href='/'>Go to Menu</Button>
+                <Button variant="primary" href='/menu'>Go to Menu</Button>
               </Card.Body>
             </Card>
           </Col>
