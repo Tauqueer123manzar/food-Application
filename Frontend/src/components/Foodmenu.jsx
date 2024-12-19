@@ -7,8 +7,8 @@ const Foodmenu = () => {
         <div className='d-flex justify-content-center mt-5' style={{ width: "100%", height: "100%"}}>
                     <Row className="p-2">
                         {foodData.map((data) => (
-                            <Col xs={12} sm={6} md={4} lg={3} className="mb-4" key={data.id}>
-                                <Card style={{ width: "22rem",height:"375px"}} className='shadow card-box'>
+                            <Col xs={12} sm={12} md={4} lg={3} className="mb-4" key={data.id}>
+                                <Card style={{ width: "20rem",height:"375px"}} className='shadow card-box m-3'>
                                     <Card.Img variant="top" src={data.image} alt={data.title} style={{height:"200px"}} />
                                     <Card.Body>
                                         <Card.Title>{data.title}</Card.Title>

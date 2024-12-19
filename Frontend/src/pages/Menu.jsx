@@ -25,7 +25,6 @@ const Menu = () => {
                         <Button variant="white" style={{ width: "120px", borderRadius: "30px", height: "65px", fontWeight: "500" }} className='shadow p-2 m-1 text-danger'>Biscuit</Button>
                     </Col>
                 </Row>
-                <Report/>
                 <Foodmenu/>
             </Container>
             <div>
