@@ -6,11 +6,10 @@ const Searchbar = () => {
   return (
     <Container fluid className="" style={{ maxWidth: "100%" }}>
       <Row className="d-flex justify-content-center p-3">
-        <Col xs={12} md={6} lg={10}> 
+        <Col xs={12} md={6}> 
           <InputGroup
             className="rounded-pill p-2"
             style={{
-              maxWidth: "650px",
               width: "100%",
               backgroundColor: "wheat",
               overflow: "hidden",
