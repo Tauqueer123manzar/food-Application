@@ -3,6 +3,7 @@ import { Button, Container, Row, Col, Card } from 'react-bootstrap'
 import Footer from '../components/Footer'
 import '../App.css'
 import Foodmenu from '../components/Foodmenu'
+import Report from '../components/Report';
 const Menu = () => {
     return (
         <>
@@ -24,6 +25,7 @@ const Menu = () => {
                         <Button variant="white" style={{ width: "120px", borderRadius: "30px", height: "65px", fontWeight: "500" }} className='shadow p-2 m-1 text-danger'>Biscuit</Button>
                     </Col>
                 </Row>
+                <Report/>
                 <Foodmenu/>
             </Container>
             <div>
