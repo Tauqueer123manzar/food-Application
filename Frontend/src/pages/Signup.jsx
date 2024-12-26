@@ -64,7 +64,11 @@ const Signup = () => {
               />
             </p>
           <Col xs={12} md={6} lg={6}>
-            <img src={fries} className='rounded' alt='juice' width={"90%"} height={"90%"} />
+            <img src={fries} className='rounded' alt='juice' width={"90%"} height={"90%"}
+             data-aos="zoom-in"
+              data-aos-duration="2000"
+              data-aos-once="true"
+              data-aos-easing="ease-in-out" />
           </Col>
 
           <Col xs={12} md={6} lg={5} className='mt-5'>

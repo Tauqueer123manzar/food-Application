@@ -29,7 +29,12 @@ const Home = () => {
             <Button className='btn btn-outline-warning' href='/service' style={{fontWeight:"600",fontSize:"20px",height:"55px",width:"180px",marginLeft:"25px"}}>Explore Services</Button>
           </Col>
           <Col xs={12} md={5} lg={7}>
-             <img src={food} className="rounded mt-2" alt='food image' width={"100%"} height={"100%"}/>
+             <img src={food} className="rounded mt-2" alt='food image' width={"100%"} height={"100%"}
+              data-aos="zoom-in"
+              data-aos-duration="2000"
+              data-aos-once="true"
+              data-aos-easing="ease-in-out"
+             />
           </Col>
         </Row>
 

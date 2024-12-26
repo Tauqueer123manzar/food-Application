@@ -127,7 +127,12 @@ const Service = () => {
               </div>
           </Col>
           <Col xs={12} md={5} lg={7} className='mt-5'>
-            <img src='https://cdn.expertphotography.com/wp-content/uploads/2020/05/indian-food-pohtography-platter.jpg' className='rounded mt-3' width={"100%"} height={"90%"}/>
+            <img src='https://cdn.expertphotography.com/wp-content/uploads/2020/05/indian-food-pohtography-platter.jpg' className='rounded mt-3' width={"100%"} height={"90%"}
+              data-aos="zoom-in"
+              data-aos-duration="2000"
+              data-aos-once="true"
+              data-aos-easing="ease-in-out"
+            />
           </Col>
         </Row>
       {/* ================================================== OUR SERVICE ========================================== */}
@@ -135,7 +140,12 @@ const Service = () => {
           <h1 className='text-center' style={{fontFamily:"times new roman",fontWeight:"bold"}}>Our Service</h1>
           {foodData.map((food) => (
           <Col xs={12} md={4} lg={3} className="mb-4" key={food.id}>
-            <Card className='services mt-4'>
+            <Card className='services mt-4'
+             data-aos="zoom-in"
+             data-aos-duration="2000"
+             data-aos-once="true"
+             data-aos-easing="ease-in-out"
+             >
               <Card.Img variant="top" src={food.image} height={"250px"} />
               <Card.Body>
                 <Card.Title>{food.title}</Card.Title>

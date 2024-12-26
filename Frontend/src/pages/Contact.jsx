@@ -84,7 +84,12 @@ const Contact = () => {
         <Row className='mt-5'>
           <h1 className='text-center text-muted' style={{ fontFamily: "times new roman" }}>Contact With Us</h1>
           <Col xs={10} md={6} lg={6}>
-            <Form className='p-2' onSubmit={handleSubmit}>
+            <Form className='p-2' onSubmit={handleSubmit}
+             data-aos="flip-left"
+             data-aos-duration="2000"
+             data-aos-once="true"
+             data-aos-easing="ease-in-out"
+             >
               <Form.Group className="mb-3" controlId="help">
                 <Form.Select 
                   className='p-3 m-4' 
@@ -161,7 +166,11 @@ const Contact = () => {
 
           <Col xs={12} md={6} lg={5} className="d-flex flex-column align-items-center gap-4">
             <div className='w-100 custom-card'>
-              <Card className='shadow-lg rounded mx-auto card-container-1'>
+              <Card className='shadow-lg rounded mx-auto card-container-1'
+               data-aos="zoom-in"
+             data-aos-duration="2000"
+             data-aos-once="true"
+             data-aos-easing="ease-in-out">
                 <Card.Body>
                   <Card.Title className='card-title' >Report a Safety Emergency</Card.Title>
                   <Card.Text className='card-text text-muted'>
@@ -173,7 +182,11 @@ const Contact = () => {
             </div>
 
             <div className=' w-100 custom-card'>
-              <Card className='shadow-lg rounded mx-auto card-container-1'>
+              <Card className='shadow-lg rounded mx-auto card-container-1'
+               data-aos="flip-right"
+             data-aos-duration="2000"
+             data-aos-once="true"
+             data-aos-easing="ease-in-out">
                 <Card.Body>
                   <Card.Title className='card-title'>Issue with your live order?</Card.Title>
                   <Card.Text className='text-muted card-text'>

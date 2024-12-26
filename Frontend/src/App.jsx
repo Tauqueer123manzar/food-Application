@@ -11,14 +11,22 @@ import PlaceOrder from './pages/PlaceOrder';
 import Signin from './pages/Signin';
 import Signup from './pages/Signup';
 import Report from './components/Report';
+import { useEffect } from 'react';
 import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import './App.css'
 import Profile from './pages/Profile';
 import Order from './pages/Order';
 import Menu from './pages/Menu';
 import photo from './assets/Tauqueer.jpg';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import './App.css'
+
 function App() {
+  
+useEffect(() => {
+  AOS.init({ duration: 1000 }); 
+}, []);
   const userData = {
     name: "Md Tauqueer Manzar",
     location: "Hyderabad, India",

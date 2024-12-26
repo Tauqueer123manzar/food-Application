@@ -8,7 +8,12 @@ const Foodmenu = () => {
                     <Row className="p-2">
                         {foodData.map((data) => (
                             <Col xs={12} sm={12} md={4} lg={3} className="mb-4" key={data.id}>
-                                <Card style={{ width: "20rem",height:"375px"}} className='shadow card-box m-3'>
+                                <Card style={{ width: "20rem",height:"375px"}} className='shadow card-box m-3'
+                                 data-aos="zoom-in"
+                                 data-aos-duration="2000"
+                                 data-aos-once="true"
+                                 data-aos-easing="ease-in-out"
+                                 >
                                     <Card.Img variant="top" src={data.image} alt={data.title} style={{height:"200px"}} />
                                     <Card.Body>
                                         <Card.Title>{data.title}</Card.Title>

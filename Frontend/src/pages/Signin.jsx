@@ -71,6 +71,10 @@ const Signin = () => {
               className="rounded"
               alt="juice"
               style={{ maxWidth: '90%', height: 'auto' }}
+              data-aos="zoom-in"
+              data-aos-duration="2000"
+              data-aos-once="true"
+              data-aos-easing="ease-in-out"
             />
           </Col>
 

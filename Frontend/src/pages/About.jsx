@@ -108,6 +108,10 @@ const About = () => {
               src="https://restaurantindia.s3.ap-south-1.amazonaws.com/s3fs-public/content9555.jpg"
               alt="food image"
               className="rounded img-fluid"
+              data-aos="zoom-in"
+              data-aos-duration="2000"
+              data-aos-once="true"
+              data-aos-easing="ease-in-out"
             />
           </Col>
         </Row>
