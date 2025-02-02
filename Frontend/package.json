@@ -12,6 +12,10 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.5.0",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/shape-circle": "^3.8.0",
+    "@tsparticles/shape-square": "^3.8.0",
+    "@tsparticles/slim": "^3.8.0",
     "aos": "^2.3.4",
     "axios": "^1.7.7",
     "bootstrap": "^5.3.3",
@@ -26,7 +30,10 @@
     "react-simple-typewriter": "^5.0.1",
     "react-slick": "^0.30.2",
     "react-toastify": "^10.0.5",
-    "slick-carousel": "^1.8.1"
+    "sass": "^1.83.4",
+    "sass-embedded": "^1.83.4",
+    "slick-carousel": "^1.8.1",
+    "tsparticles": "^3.8.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.11.1",
