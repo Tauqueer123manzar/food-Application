@@ -1,65 +1,63 @@
-import React from 'react';
-import { useEffect,useState,useMemo } from 'react';
+import { useEffect, useState, useMemo } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
-import {loadSlim} from "@tsparticles/slim";
-import { TRUE } from 'sass-embedded';
-const Particlesbackground = () => {
- const[isLoaded,setIsLoaded]=useState(false);
- 
- useEffect(()=>{
-    initParticlesEngine(async (engine)=>{
-       await loadSlim(engine);
-    }).then(()=>{
-        setIsLoaded(true);
-    })
- },[]);
+import { loadSlim } from "@tsparticles/slim";
 
- // Memoize particle configuartion options for better performance
- const particlesOptions = useMemo(() => ({
-    background:{
-       color:{value:"#0d47a1"},
+const ParticlesBackground= () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  // tsParticles engine initialization
+  useEffect(() => {
+    initParticlesEngine(async (engine) => {
+      await loadSlim(engine); 
+    }).then(() => setIsLoaded(true));
+  }, []);
+
+  const particleOptions = useMemo(() => ({
+    background: {
+      // color: { value: "#f76325" }
+     color: { value: "rgb(180,70,80)" }
     },
-    fpsLimit:120,
-    interactivity:{
-        events:{
-           onClick:{enable:true,mode:"push"},
-           onHover:{enable:true,mode:"repulse"},
-        },
-        modes:{
-           push:{quantity:5},
-           repulse:{distance:200,duration:0.4},
-        },
+    fpsLimit: 120,
+    interactivity: {
+      events: {
+        onClick: { enable: true, mode: "push" },
+        onHover: { enable: true, mode: "repulse" },
+      },
+      modes: {
+        push: { quantity: 6 },
+        repulse: { distance: 200, duration: 0.4 },
+      },
     },
-    particles:{
-       color:{value:"#ffffff"},
-       links:{
-           color:"#ffffff",
-           distance:150,
-           enable:true,
-           opacity:0.5,
-           width:1,      
-       },
-       move:{
-           enable:true,
-           speed:6,
-           direction:"none",
-           random:true,
-           straight:false,
-           outModes:{default:"bounce"},
-       },
-       number:{value:80,density:{enable:true,area:800}},
-       opacity:{value:{min:0.5,max:0.9}},
-       shape:{type:"circle"},
-       size:{value:{min:1,max:5}},
+    particles: {
+      color: { value: "#ffffff" },
+      links: {
+        color: "#ffffff",
+        distance: 150,
+        enable: true,
+        opacity: 0.8,
+        width: 1,
+      },
+      move: {
+        enable: true,
+        speed: 5,
+        direction: "none",
+        // transition:{duration: 0.5},
+        outModes: { default: "bounce" },
+      },
+      number: { value: 80, density: { enable: true } },
+      opacity: { value: 0.5 },
+      shape: { type: "circle" },
+      size: { value: { min: 1, max: 5 } },
     },
-    detectRetina:TRUE
-}),[]);
-  return isLoaded?(
+    detectRetina: true,
+  }), []);
+
+  return isLoaded ? (
     <Particles
-    id="tsparticles"
-    options={particlesOptions}
+      id="tsparticles"
+      options={particleOptions}
     />
-  ):null;
+  ) : null;
 };
 
-export default Particlesbackground
+export default ParticlesBackground;
