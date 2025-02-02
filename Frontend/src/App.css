@@ -155,7 +155,6 @@
     font-weight: 600;
     border-radius: 20px;
   }
-
   
   /* Responsive Design */
   @media (max-width: 768px) {
@@ -170,7 +169,6 @@
     .accordion-body {
       font-size: 1rem;
     }
-
   }
   
 @media (min-width:240px) and (max-width:768px) {
@@ -191,6 +189,9 @@
     }
     .nav-link{
       display: block;
+    }
+    .no-caret{
+      margin-left: 123px;
     }
 }
 

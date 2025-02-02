@@ -205,7 +205,7 @@ const About = () => {
           </Col>
         </Row>
 
-        <hr style={{ border: "2px dashed orange", margin: 0, padding: 0 }} />
+        <hr style={{ border: "2px solid orange", margin: 0, padding: 0 }} />
         <Footer />
       </Container>
     </>

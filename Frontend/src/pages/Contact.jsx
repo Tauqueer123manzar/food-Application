@@ -3,6 +3,7 @@ import { Container, Row, Col, Button, Form, Card } from 'react-bootstrap';
 import food from '../assets/food contact.jpg';
 import Footer from '../components/Footer';
 import { toast } from 'react-toastify';
+import axios from 'axios';
 import '../App.css';
 
 const Contact = () => {
@@ -14,35 +15,6 @@ const Contact = () => {
     message: ""
   });
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await fetch( "http://localhost:5000/api/v1/message/send", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-      const data = await response.json();
-      if (response.ok) {
-        toast.success(data.message);
-        setFormData({
-          helpType: "", 
-          name: "",
-          email: "",
-          mobile: "",
-          message: "",
-        });
-      } else {
-        toast.error(data.message || "Something went wrong");
-      }
-    } catch (error) {
-      console.log(error);
-      toast.error("Something went wrong");
-    }
-  };
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -51,6 +23,31 @@ const Contact = () => {
     });
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+        const response = await axios.post(
+            "http://localhost:5000/api/v1/message/send",
+            formData,
+            { withCredentials: true }
+        );
+
+        toast.success(response.data.message);
+        setFormData({
+            helpType: "",
+            name: "",
+            email: "",
+            mobile: "",
+            message: ""
+        });
+
+    } catch (error) {
+        console.log("Axios Error:", error); 
+        toast.error(error.response?.data?.message || "Something went wrong!");
+    }
+};
+
+  
   return (
     <>
       <Container fluid style={{ width: "100%", height: "100%", overflowX: "hidden", margin: "0", padding: "0" }}>

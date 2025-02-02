@@ -6,6 +6,7 @@ import { NavDropdown } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { CiSearch } from "react-icons/ci";
+import { FaShoppingCart } from "react-icons/fa";
 import '../App.css';
 const Topbar = () => {
 
@@ -43,7 +44,7 @@ const Topbar = () => {
             </Nav>
             {
               token ? (
-                <NavDropdown className='text-muted fs-5 no-caret' id="navbarScrollingDropdown" title="Logout">
+                <NavDropdown className='text-muted fs-5 no-caret'style={{width:"120px",textAlign:"center"}} id="navbarScrollingDropdown" title="Logout">
                   <NavDropdown.Item href='/profile'>Profile</NavDropdown.Item>
                   <NavDropdown.Item href='/order'>Order</NavDropdown.Item>
                   <NavDropdown.Item onClick={handlelogout}>Logout</NavDropdown.Item>
@@ -54,7 +55,7 @@ const Topbar = () => {
                 </Nav.Link>
               )
             }
-            <Nav.Link href='/cart' className='p-2 text-muted fs-5' style={{ textAlign: "center" }}>Cart</Nav.Link>
+            <Nav.Link href='/cart' className='p-2 text-muted fs-4' style={{ textAlign: "center" }}><FaShoppingCart /></Nav.Link>
           </Navbar.Collapse>
         </Container>
       </Navbar>

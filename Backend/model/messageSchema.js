@@ -13,17 +13,16 @@ const messageSchema = new mongoose.Schema({
     email: {
         type: String,
         required: true,
-        trim: true,
-        unique: true
+        trim: true
     },
     mobile: {
         type: String,
-        trime: true
+        trim: true
     },
     message: {
         type: String,
         required: true,
-        trime: true
+        trim: true
     }
 }, { timestamps: true });
 

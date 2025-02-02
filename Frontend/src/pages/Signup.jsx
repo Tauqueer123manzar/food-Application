@@ -18,7 +18,7 @@ const Signup = () => {
     e.preventDefault();
     console.log('Form submitted',name,email,password,confirmpassword);
    try {
-    await axios.post("http://localhost:5000/api/v1/user/signup",{
+    await axios.post("http://localhost:5000/api/v1/user/register",{
       name,
       email,
       password,
@@ -49,7 +49,7 @@ const Signup = () => {
   };
   return (
     <>
-      <Container fluid style={{ width: "100%", height: "100%",backgroundColor:"wheat"}}>
+      <Container fluid style={{ width: "100%", height: "100%"}}>
         <Row className='mt-5'>
           <h3 className='mt-5 text-center text-muted'>Welcome!</h3>
           <p className='text-center' style={{ fontWeight: "400", fontFamily: "initial", fontSize: "25px", color: "orange" }}>
@@ -72,7 +72,7 @@ const Signup = () => {
           </Col>
 
           <Col xs={12} md={6} lg={5} className='mt-5'>
-            <Form className='shadow-lg p-5 rounded' style={{ height: '88%',backgroundColor:"lightyellow"}} onSubmit={handleSubmit}>
+            <Form className='shadow-lg p-5 rounded' style={{ height: '88%'}} onSubmit={handleSubmit}>
               <p className='text-center' style={{ color: "orange", fontSize: "25px", fontWeight: "500" }}>USER SIGNUP</p>
 
               <Form.Group className='mb-3 p-1' controlId='name'>
@@ -121,7 +121,7 @@ const Signup = () => {
             </Form>
           </Col>
         </Row>
-        <hr style={{ border: "2px dashed orange", margin: "0", padding: "0", marginTop: "10px" }} />
+        <hr style={{ border: "2px solid orange", margin: "0", padding: "0", marginTop: "10px" }} />
       </Container>
       <Container fluid style={{ width: "100%", height: "100%"}}>
       <Row>

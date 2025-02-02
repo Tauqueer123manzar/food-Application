@@ -40,7 +40,7 @@ const Signin = () => {
 
   return (
     <>
-      <Container fluid style={{ width: '100%', height:"100%",backgroundColor:"wheat"}}>
+      <Container fluid style={{ width: '100%', height:"100%"}}>
         <Row className="mt-5">
           <h3 className="mt-5 text-center text-muted">Welcome Back!</h3>
           <p
@@ -81,7 +81,7 @@ const Signin = () => {
           <Col xs={12} md={6} lg={5} className="mt-5">
             <Form
               className="shadow-lg p-5 rounded"
-              style={{ width:"100%",height:"90%",backgroundColor:"lightyellow"}}
+              style={{ width:"100%",height:"90%"}}
               onSubmit={handleSubmit}
             >
               <p
@@ -128,7 +128,7 @@ const Signin = () => {
         </Row>
         <hr
           style={{
-            border: '2px dashed orange',
+            border: '2px solid orange',
             margin: '20px',
             padding: '0',
           }}
