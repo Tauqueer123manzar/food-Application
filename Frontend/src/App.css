@@ -193,9 +193,7 @@
     .no-caret{
       margin-left: 123px;
     }
-    .service_button{
-      width: 180px;
-    }
+
 }
 
 @media (min-width:768px) and(max-width:1440px) {
