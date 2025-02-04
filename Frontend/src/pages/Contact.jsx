@@ -194,7 +194,7 @@ const Contact = () => {
             </div>
           </Col>
         </Row>
-        <hr style={{ border: "2px dashed orange", margin: "0", padding: "0" }} />
+        <hr style={{ border: "1px solid gray", margin: "0", padding: "0" }} />
         <Row className='m-2'>
           <Footer />
         </Row>

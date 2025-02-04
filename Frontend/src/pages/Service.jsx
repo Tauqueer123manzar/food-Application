@@ -6,10 +6,10 @@ import { MdStarRate } from "react-icons/md";
 import '../App.css';
 const Service = () => {
   const reviews = [
-    { id: 1, name: "Md Tauqueer Manzar", title:"Sr.Software Enginer", review: "Amazing service! Loved it Your food was delicious and food quality was very good.I will recommend you to my friends.", stars: 5 },
-    { id: 2, name: "Mehnaz Fatma",title:"Software Enginer",review: "The food was delicious! Your food was delicious and food quality was very good.I will recommend you to my friends.", stars: 4 },
-    { id: 3, name: "Abhisek Kumar",title:"Developer", review: "Quick delivery and great quality Your food was delicious and food quality was very good.I will recommend you to my friends.", stars: 5 },
-    { id: 4, name: "Sweta Kumari",title:"Devops Devloper", review: "Quick delivery and great quality Your food was delicious and food quality was very good.I will recommend you to my friends.", stars: 4.5 }
+    { id: 1, name: "Md Tauqueer Manzar", title: "Sr.Software Enginer", review: "Amazing service! Loved it Your food was delicious and food quality was very good.I will recommend you to my friends.", stars: 5 },
+    { id: 2, name: "Mehnaz Fatma", title: "Software Enginer", review: "The food was delicious! Your food was delicious and food quality was very good.I will recommend you to my friends.", stars: 4 },
+    { id: 3, name: "Abhisek Kumar", title: "Developer", review: "Quick delivery and great quality Your food was delicious and food quality was very good.I will recommend you to my friends.", stars: 5 },
+    { id: 4, name: "Sweta Kumari", title: "Devops Devloper", review: "Quick delivery and great quality Your food was delicious and food quality was very good.I will recommend you to my friends.", stars: 4.5 }
   ];
 
   const foodData = [
@@ -29,7 +29,7 @@ const Service = () => {
     },
     {
       id: 3,
-      image:"https://www.cookwithnabeela.com/wp-content/uploads/2024/02/ChickenWrap.webp",
+      image: "https://www.cookwithnabeela.com/wp-content/uploads/2024/02/ChickenWrap.webp",
       title: "Chicken Wrap",
       description: "Healthy greens with crispy chicken.",
       price: 199
@@ -74,7 +74,7 @@ const Service = () => {
       image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvXUd48SZANg0HoPU0gh97NnjDvYMXC30MPesyj0beXMUH-qh4__K8MXIORIRRfALHZnQ&usqp=CAU",
       title: "Mutton Biryani",
       description: "Spicy and flavorful mutton biryani",
-      price:239
+      price: 239
     },
     {
       id: 10,
@@ -98,7 +98,7 @@ const Service = () => {
       price: 149
     }
   ];
-  
+
   return (
     <>
       <Container fluid style={{ maxWidth: "100%", maxHeight: "100%" }}>
@@ -115,16 +115,16 @@ const Service = () => {
                 delayspeed={3000}
               />
             </h1>
-            <p className='text-muted p-3' style={{ fontSize: "17px" }}>At <span style={{ color: "orange", fontSize: "20px", fontWeight: "bold",textJustify:"auto"}}>
+            <p className='text-muted p-3' style={{ fontSize: "17px" }}>At <span style={{ color: "orange", fontSize: "20px", fontWeight: "bold", textJustify: "auto" }}>
               Food Hunt</span>,we’re all about bringing deliciousness to your doorstep.
               With a focus on convenience, variety, and quality, our services are designed
               to satisfy every craving and make your dining experience unforgettable.
               Enjoy delicious meals without breaking the bank! Check out our exclusive deals,
               discounts, and cashback offers that add more value to your dining experience.</p>
 
-              <div className='p-3'>
-              <Button variant='primary' className='btn btn-outline-warning' href='/menu'><span style={{fontSize:"20px"}}>Explore Menu</span></Button>
-              </div>
+            <div className='p-3'>
+              <Button variant='primary' className='btn btn-outline-warning' href='/menu'><span style={{ fontSize: "20px" }}>Explore Menu</span></Button>
+            </div>
           </Col>
           <Col xs={12} md={5} lg={7} className='mt-5'>
             <img src='https://cdn.expertphotography.com/wp-content/uploads/2020/05/indian-food-pohtography-platter.jpg' className='rounded mt-3' width={"100%"} height={"90%"}
@@ -135,35 +135,35 @@ const Service = () => {
             />
           </Col>
         </Row>
-      {/* ================================================== OUR SERVICE ========================================== */}
+        {/* ================================================== OUR SERVICE ========================================== */}
         <Row className='mt-3'>
-          <h1 className='text-center' style={{fontFamily:"times new roman",fontWeight:"bold"}}>Our Service</h1>
+          <h1 className='text-center' style={{ fontFamily: "times new roman", fontWeight: "bold" }}>Our Service</h1>
           {foodData.map((food) => (
-          <Col xs={12} md={4} lg={3} className="mb-4" key={food.id}>
-            <Card className='services mt-4'
-             data-aos="zoom-in"
-             data-aos-duration="2000"
-             data-aos-once="true"
-             data-aos-easing="ease-in-out"
-             >
-              <Card.Img variant="top" src={food.image} height={"250px"} />
-              <Card.Body>
-                <Card.Title>{food.title}</Card.Title>
-                <Card.Text>{food.description}</Card.Text>
-                <h5>₹{food.price}</h5>
-                <Button variant="primary" href='/menu'>Go to Menu</Button>
-              </Card.Body>
-            </Card>
-          </Col>
-        ))}
-      </Row>
-      
-      <hr style={{border:"2px dashed orange",margin:"0",padding:"0"}}/>
+            <Col xs={12} md={4} lg={3} className="mb-4" key={food.id}>
+              <Card className='services mt-4'
+                data-aos="zoom-in"
+                data-aos-duration="2000"
+                data-aos-once="true"
+                data-aos-easing="ease-in-out"
+              >
+                <Card.Img variant="top" src={food.image} height={"250px"} />
+                <Card.Body>
+                  <Card.Title>{food.title}</Card.Title>
+                  <Card.Text>{food.description}</Card.Text>
+                  <h5>₹{food.price}</h5>
+                  <Button variant="primary" href='/menu'>Go to Menu</Button>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
+        </Row>
 
-    {/* ================================================= Footer ================================================= */}
-      <Row className='mt-4'>
-          <Footer/>
-      </Row>
+        <hr style={{ border: "1px solid gray", margin: "0", padding: "0" }} />
+
+        {/* ================================================= Footer ================================================= */}
+        <Row className='mt-4'>
+          <Footer />
+        </Row>
       </Container>
     </>
   )
