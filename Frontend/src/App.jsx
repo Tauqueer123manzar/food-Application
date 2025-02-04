@@ -21,6 +21,7 @@ import photo from './assets/Tauqueer.jpg';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './App.css'
+import AdminDashboard from './pages/AdminDashboard';
 
 function App() {
   
@@ -55,6 +56,7 @@ useEffect(() => {
         <Route path='/placeorder' element={<PlaceOrder/>}/>
         <Route path='/profile' element={<Profile user={userData}/>}/>
         <Route path='/order' element={<Order/>}/>
+        <Route path='/admin' element={<AdminDashboard/>}/>
       </Routes>
       <ToastContainer position='top-center'/>
     </Router>
